@@ -6,7 +6,7 @@ interface FormData {
   name: string
   email: string
   phone: string
-  serviceType: string
+  services: string[]
   message: string
 }
 
@@ -15,23 +15,23 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
-    serviceType: '',
+    services: [],
     message: '',
   })
-  const [errors, setErrors] = useState<Partial<FormData>>({})
+  const [errors, setErrors] = useState<Partial<FormData & { services: string }>>({})
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const serviceOptions = [
-    'Abhi Constructions and Innovations',
-    'Abhi Consultancy Services',
-    'Abhi Digital Services',
-    'Abhi Event Management',
-    'Abhi Entertainments',
-    'Abhi F&B Services',
+    'Constructions & Innovations',
+    'Consultancy Services',
+    'Digital Services',
+    'Event Management',
+    'Entertainments',
+    'F&B Services',
   ]
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<FormData> = {}
+    const newErrors: Partial<FormData & { services: string }> = {}
 
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required'
@@ -44,8 +44,8 @@ export default function Contact() {
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone number is required'
     }
-    if (!formData.serviceType) {
-      newErrors.serviceType = 'Please select a service type'
+    if (formData.services.length === 0) {
+      newErrors.services = 'Please select at least one service'
     }
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required'
@@ -65,7 +65,7 @@ export default function Contact() {
         name: '',
         email: '',
         phone: '',
-        serviceType: '',
+        services: [],
         message: '',
       })
       
@@ -75,7 +75,7 @@ export default function Contact() {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
     if (errors[name as keyof FormData]) {
@@ -83,47 +83,45 @@ export default function Contact() {
     }
   }
 
+  const handleServiceToggle = (service: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      services: prev.services.includes(service)
+        ? prev.services.filter((s) => s !== service)
+        : [...prev.services, service],
+    }))
+    if (errors.services) {
+      setErrors((prev) => ({ ...prev, services: undefined }))
+    }
+  }
+
   return (
-    <section id="contact" className="py-20 bg-sectionBackground">
-      <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-textMain mb-4">
-            Contact and Enquiries
+    <section id="contact" className="section-padding bg-surface">
+      <div className="container-editorial">
+        <div className="max-w-2xl mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-textMain mb-6">
+            Share your plan, we'll shape the rest.
           </h2>
-          <div className="w-24 h-1 bg-brandOrange mx-auto mb-6"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Contact Info */}
           <div>
-            <h3 className="font-serif text-2xl font-semibold text-textMain mb-6">
-              Get in Touch
-            </h3>
-            <p className="text-brandGray mb-8 leading-relaxed">
-              We'd love to hear from you. Whether you have a question about our services, need a quote, or want to discuss your project, our team is ready to help.
+            <p className="text-lg text-brandGray mb-8 leading-relaxed">
+              Tell us about your project – whether it's construction, an event, digital work, or a combination. We'll get back to you within 1–2 working days.
             </p>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <span className="text-brandOrange mr-3 text-xl">📞</span>
-                <div>
-                  <p className="font-semibold text-textMain">Phone</p>
-                  <p className="text-brandGray">+1 (555) 123-4567</p>
-                </div>
+            <div className="space-y-6">
+              <div>
+                <p className="font-semibold text-textMain mb-1">Phone</p>
+                <p className="text-brandGray">+1 (555) 123-4567</p>
               </div>
-              <div className="flex items-start">
-                <span className="text-brandOrange mr-3 text-xl">✉️</span>
-                <div>
-                  <p className="font-semibold text-textMain">Email</p>
-                  <p className="text-brandGray">info@abhieliteservices.com</p>
-                </div>
+              <div>
+                <p className="font-semibold text-textMain mb-1">Email</p>
+                <p className="text-brandGray">info@abhieliteservices.com</p>
               </div>
-              <div className="flex items-start">
-                <span className="text-brandOrange mr-3 text-xl">🕒</span>
-                <div>
-                  <p className="font-semibold text-textMain">Service Hours</p>
-                  <p className="text-brandGray">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p className="text-brandGray">Saturday: 10:00 AM - 4:00 PM</p>
-                </div>
+              <div>
+                <p className="font-semibold text-textMain mb-1">Response time</p>
+                <p className="text-brandGray">We typically respond within 1–2 working days.</p>
               </div>
             </div>
           </div>
@@ -131,9 +129,9 @@ export default function Contact() {
           {/* Right Column - Contact Form */}
           <div>
             {isSubmitted ? (
-              <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                <p className="text-green-800 font-semibold text-lg mb-2">✓ Thank you for your message!</p>
-                <p className="text-green-700">We'll get back to you soon.</p>
+              <div className="bg-brandOrange/10 border border-brandOrange/30 rounded-lg p-6 text-center">
+                <p className="text-brandOrange font-semibold text-lg mb-2">✓ Thank you for your message!</p>
+                <p className="text-brandGray">We'll get back to you within 1–2 working days.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -148,7 +146,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brandOrange ${
-                      errors.name ? 'border-red-500' : 'border-gray-300'
+                      errors.name ? 'border-red-500' : 'border-brandGray/30'
                     }`}
                   />
                   {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
@@ -165,7 +163,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brandOrange ${
-                      errors.email ? 'border-red-500' : 'border-gray-300'
+                      errors.email ? 'border-red-500' : 'border-brandGray/30'
                     }`}
                   />
                   {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
@@ -182,33 +180,33 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brandOrange ${
-                      errors.phone ? 'border-red-500' : 'border-gray-300'
+                      errors.phone ? 'border-red-500' : 'border-brandGray/30'
                     }`}
                   />
                   {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="serviceType" className="block text-sm font-semibold text-textMain mb-2">
-                    Service Type <span className="text-brandOrange">*</span>
+                  <label className="block text-sm font-semibold text-textMain mb-3">
+                    Service(s) needed <span className="text-brandOrange">*</span>
                   </label>
-                  <select
-                    id="serviceType"
-                    name="serviceType"
-                    value={formData.serviceType}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brandOrange ${
-                      errors.serviceType ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                  >
-                    <option value="">Select a service</option>
+                  <div className="space-y-2">
                     {serviceOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
+                      <label
+                        key={option}
+                        className="flex items-center space-x-3 cursor-pointer p-2 rounded hover:bg-backgroundWarm"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={formData.services.includes(option)}
+                          onChange={() => handleServiceToggle(option)}
+                          className="w-4 h-4 text-brandOrange border-brandGray/30 rounded focus:ring-brandOrange"
+                        />
+                        <span className="text-brandGray">{option}</span>
+                      </label>
                     ))}
-                  </select>
-                  {errors.serviceType && <p className="text-red-500 text-sm mt-1">{errors.serviceType}</p>}
+                  </div>
+                  {errors.services && <p className="text-red-500 text-sm mt-1">{errors.services}</p>}
                 </div>
 
                 <div>
@@ -222,7 +220,7 @@ export default function Contact() {
                     onChange={handleChange}
                     rows={5}
                     className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brandOrange ${
-                      errors.message ? 'border-red-500' : 'border-gray-300'
+                      errors.message ? 'border-red-500' : 'border-brandGray/30'
                     }`}
                   ></textarea>
                   {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
@@ -230,10 +228,14 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-brandOrange text-white font-semibold rounded-lg shadow-lg hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-brandOrange focus:ring-offset-2"
+                  className="w-full px-8 py-4 bg-brandOrange text-white font-semibold rounded-lg shadow-md hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-brandOrange focus:ring-offset-2"
                 >
                   Send Message
                 </button>
+                
+                <p className="text-xs text-brandGray text-center">
+                  We'll use this information to respond to your enquiry.
+                </p>
               </form>
             )}
           </div>
@@ -242,4 +244,3 @@ export default function Contact() {
     </section>
   )
 }
-

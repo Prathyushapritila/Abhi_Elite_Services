@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -9,61 +11,63 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-sectionBackground via-backgroundMain to-sectionBackground overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(45deg, #6A6A6A 25%, transparent 25%), linear-gradient(-45deg, #6A6A6A 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #6A6A6A 75%), linear-gradient(-45deg, transparent 75%, #6A6A6A 75%)`,
-          backgroundSize: '40px 40px',
-          backgroundPosition: '0 0, 0 20px, 20px -20px, -20px 0px'
-        }}></div>
-      </div>
-
-      <div className="container-custom relative z-10 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+    <section id="home" className="relative section-padding bg-gradient-to-br from-backgroundWarm via-white to-backgroundWarm overflow-hidden">
+      {/* Subtle frame line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brandGray/20 to-transparent"></div>
+      
+      <div className="container-editorial">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side - Content */}
           <div className="space-y-8 animate-fade-in">
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-textMain leading-tight">
-              Abhi Elite Services
+            <div className="text-xs uppercase tracking-wider text-brandGray font-medium">
+              ABHI ELITE SERVICES
+            </div>
+            
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-textMain leading-tight tracking-tight">
+              Construction, events, digital and F&B under one trusted team.
             </h1>
-            <p className="text-lg sm:text-xl text-brandGray leading-relaxed max-w-xl">
-              A single trusted partner for construction, consultancy, digital, events, entertainment, and F&B services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            
+            <div className="space-y-4 text-lg text-brandGray leading-relaxed max-w-xl">
+              <p>
+                We plan and execute real-world projects – from buildings and business setups to events, branding and food services – so clients work with one team instead of five vendors.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 onClick={() => scrollToSection('services')}
-                className="px-8 py-4 bg-brandOrange text-white font-semibold rounded-lg shadow-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brandOrange focus:ring-offset-2"
+                className="px-8 py-4 bg-brandOrange text-white font-semibold rounded-lg shadow-md hover:bg-opacity-90 transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-brandOrange focus:ring-offset-2"
               >
-                Explore Services
+                View all services
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="px-8 py-4 border-2 border-brandGray text-brandGray font-semibold rounded-lg hover:border-brandOrange hover:text-brandOrange transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-brandOrange focus:ring-offset-2"
               >
-                Contact Us
+                Talk to our team
               </button>
             </div>
           </div>
 
-          {/* Right Side - Abstract Illustration */}
-          <div className="hidden md:block relative">
-            <div className="relative w-full h-96">
-              {/* Overlapping boxes representing different services */}
-              <div className="absolute top-0 left-0 w-32 h-32 border-2 border-brandGray rounded-sm bg-white shadow-lg transform rotate-6 flex items-center justify-center">
-                <span className="text-4xl">🏗️</span>
+          {/* Right Side - Image Cards */}
+          <div className="relative hidden md:block">
+            <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
+                alt="Construction project"
+                fill
+                className="object-cover"
+              />
+            </div>
+            
+            {/* Overlapping project card */}
+            <div className="absolute -bottom-6 -left-6 bg-surface border-2 border-brandGray/20 rounded-lg p-6 shadow-lg max-w-[280px]">
+              <div className="text-xs uppercase tracking-wide text-brandGray mb-2">Recent project</div>
+              <div className="font-serif text-lg font-semibold text-textMain mb-2">
+                Residential project + Launch event + F&B catering
               </div>
-              <div className="absolute top-16 right-8 w-32 h-32 border-2 border-brandOrange rounded-sm bg-white shadow-lg transform -rotate-6 flex items-center justify-center">
-                <span className="text-4xl">💻</span>
-              </div>
-              <div className="absolute bottom-20 left-12 w-32 h-32 border-2 border-brandGray rounded-sm bg-white shadow-lg transform rotate-12 flex items-center justify-center">
-                <span className="text-4xl">🎉</span>
-              </div>
-              <div className="absolute bottom-0 right-0 w-32 h-32 border-2 border-brandOrange rounded-sm bg-white shadow-lg transform -rotate-12 flex items-center justify-center">
-                <span className="text-4xl">🍽️</span>
-              </div>
-              {/* Center connecting element */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 border-2 border-brandGray rounded-sm bg-sectionBackground shadow-md flex items-center justify-center">
-                <span className="text-3xl font-serif font-bold text-brandOrange">ABHI</span>
+              <div className="text-sm text-brandGray">
+                All managed by Abhi
               </div>
             </div>
           </div>
@@ -72,4 +76,3 @@ export default function Hero() {
     </section>
   )
 }
-

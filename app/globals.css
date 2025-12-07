@@ -8,13 +8,21 @@
   }
   
   body {
-    @apply bg-backgroundMain text-textMain;
+    @apply bg-backgroundWarm text-textMain;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
   }
 }
 
 @layer components {
-  .container-custom {
-    @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8;
+  .container-editorial {
+    @apply max-w-[1100px] mx-auto px-6 sm:px-8 lg:px-12;
+  }
+  
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
   }
 }
 

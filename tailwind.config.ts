@@ -9,15 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brandOrange: '#D87928',
-        brandGray: '#6A6A6A',
-        backgroundMain: '#FFFFFF',
-        sectionBackground: '#F7F7F7',
-        textMain: '#222222',
+        brandOrange: '#D87A2A',
+        brandGray: '#6F7072',
+        backgroundWarm: '#F9F7F3',
+        surface: '#FFFFFF',
+        textMain: '#191919',
       },
       fontFamily: {
         serif: ['var(--font-serif)'],
         sans: ['var(--font-sans)'],
+      },
+      letterSpacing: {
+        'wide': '0.05em',
+        'wider': '0.1em',
       },
     },
   },

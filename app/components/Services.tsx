@@ -1,91 +1,93 @@
 'use client'
 
+import Image from 'next/image'
+
 interface Service {
   id: string
   title: string
   description: string
-  icon: string
+  imageUrl: string
 }
 
 const services: Service[] = [
   {
     id: 'constructions',
-    title: 'Abhi Constructions and Innovations',
-    description: 'End-to-end construction, renovation and infrastructure solutions for residential and commercial projects with a focus on quality and innovation.',
-    icon: '🏗️',
+    title: 'Constructions & Innovations',
+    description: 'Residential and commercial projects, renovations, interiors and on-site coordination.',
+    imageUrl: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=400&q=80',
   },
   {
     id: 'consultancy',
-    title: 'Abhi Consultancy Services',
-    description: 'Business and technical consulting, project planning, feasibility studies and strategic guidance to help clients make confident decisions.',
-    icon: '💼',
+    title: 'Consultancy Services',
+    description: 'Planning, approvals, budgeting and vendor coordination so projects move smoothly.',
+    imageUrl: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80',
   },
   {
     id: 'digital',
-    title: 'Abhi Digital Services',
-    description: 'Web design, branding, digital marketing, and technology integration to strengthen online presence and customer engagement.',
-    icon: '💻',
+    title: 'Digital Services',
+    description: 'Brand identity, websites, social media and digital setup for your business or event.',
+    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
   },
   {
     id: 'events',
-    title: 'Abhi Event Management',
-    description: 'Planning and execution of corporate events, private functions, product launches and community programs.',
-    icon: '📅',
+    title: 'Event Management',
+    description: 'Stage, sound, decor and coordination for launches, weddings and corporate events.',
+    imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80',
   },
   {
     id: 'entertainment',
-    title: 'Abhi Entertainments',
-    description: 'Stage shows, cultural programs, performances and entertainment experiences for events and celebrations.',
-    icon: '✨',
+    title: 'Entertainments',
+    description: 'Cultural programs, live performances and custom entertainment line-ups.',
+    imageUrl: 'https://images.unsplash.com/photo-1464375117522-1311dd6d0cd7?w=400&q=80',
   },
   {
     id: 'fnb',
-    title: 'Abhi F&B Services',
-    description: 'Catering, food stalls and customized dining experiences for corporate, social and private events.',
-    icon: '🍽️',
+    title: 'F&B Services',
+    description: 'Catering, food counters and curated menus for any size of gathering.',
+    imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80',
   },
 ]
 
 export default function Services() {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
-
   return (
-    <section id="services" className="py-20 bg-sectionBackground">
-      <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-textMain mb-4">
-            Our Services
+    <section id="services" className="section-padding bg-surface">
+      <div className="container-editorial">
+        {/* Intro */}
+        <div className="max-w-2xl mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-textMain mb-6">
+            Services under Abhi Elite
           </h2>
-          <div className="w-24 h-1 bg-brandOrange mx-auto mb-6"></div>
-          <p className="text-lg text-brandGray max-w-3xl mx-auto">
-            Abhi Elite Services combines multiple service verticals under one trusted brand, providing comprehensive solutions for all your needs.
+          <p className="text-lg text-brandGray leading-relaxed">
+            One company covering multiple verticals. Instead of coordinating with separate teams for construction, events, digital work and catering, you work with one trusted partner who understands how these pieces fit together.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-backgroundMain rounded-lg p-8 shadow-md border border-gray-200 hover:shadow-xl hover:border-brandOrange transition-all duration-300 transform hover:-translate-y-2"
+              className="group flex gap-6 p-6 rounded-lg border border-brandGray/10 hover:border-brandOrange/30 hover:shadow-lg transition-all duration-300 bg-surface"
             >
-              <div className="text-5xl mb-4">{service.icon}</div>
-              <h3 className="font-serif text-xl font-semibold text-textMain mb-3">
-                {service.title}
-              </h3>
-              <p className="text-brandGray mb-6 leading-relaxed">
-                {service.description}
-              </p>
-              <button
-                onClick={scrollToContact}
-                className="text-brandOrange font-semibold hover:underline focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 rounded px-2 py-1"
-              >
-                Learn more →
-              </button>
+              {/* Image Thumbnail */}
+              <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden">
+                <Image
+                  src={service.imageUrl}
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              
+              {/* Content */}
+              <div className="flex-1">
+                <h3 className="font-serif text-xl font-semibold text-textMain mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-brandGray leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -93,4 +95,3 @@ export default function Services() {
     </section>
   )
 }
-

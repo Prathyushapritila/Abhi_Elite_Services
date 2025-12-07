@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -9,7 +10,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'services', 'about', 'portfolio', 'contact']
+      const sections = ['home', 'services', 'sectors', 'about', 'work', 'contact']
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -34,16 +35,16 @@ export default function Navbar() {
   }
 
   const navLinks = [
-    { name: 'Home', href: '#home', id: 'home' },
     { name: 'Services', href: '#services', id: 'services' },
+    { name: 'Sectors', href: '#sectors', id: 'sectors' },
     { name: 'About', href: '#about', id: 'about' },
-    { name: 'Portfolio', href: '#portfolio', id: 'portfolio' },
+    { name: 'Work', href: '#work', id: 'work' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-backgroundMain shadow-sm">
-      <div className="container-custom">
+    <nav className="sticky top-0 z-50 bg-backgroundWarm/95 backdrop-blur-sm border-b border-brandGray/10">
+      <div className="container-editorial">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link 
@@ -52,21 +53,25 @@ export default function Navbar() {
             onClick={() => handleNavClick('home')}
             aria-label="Abhi Elite Services Home"
           >
-            <div className="relative">
-              <div className="w-16 h-16 border-2 border-brandGray flex items-center justify-center rounded-sm">
-                <span className="font-serif text-2xl font-bold text-brandOrange">ABHI</span>
-              </div>
+            <div className="relative w-16 h-16">
+              <Image
+                src="/abhi-logo.png"
+                alt="Abhi Elite Services"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
               <Link
                 key={link.id}
                 href={link.href}
                 onClick={() => handleNavClick(link.id)}
-                className={`relative text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 rounded px-2 py-1 ${
+                className={`relative text-sm font-medium tracking-wide transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 rounded px-2 py-1 ${
                   activeSection === link.id
                     ? 'text-brandOrange'
                     : 'text-brandGray hover:text-brandOrange'
@@ -107,17 +112,17 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 border-t border-gray-200 mt-2">
+          <div className="md:hidden pb-6 border-t border-brandGray/10 mt-2">
             <div className="flex flex-col space-y-2 pt-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.id}
                   href={link.href}
                   onClick={() => handleNavClick(link.id)}
-                  className={`px-4 py-2 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 ${
+                  className={`px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 ${
                     activeSection === link.id
-                      ? 'text-brandOrange bg-orange-50'
-                      : 'text-brandGray hover:text-brandOrange hover:bg-gray-50'
+                      ? 'text-brandOrange bg-brandOrange/10'
+                      : 'text-brandGray hover:text-brandOrange hover:bg-brandGray/5'
                   }`}
                 >
                   {link.name}
@@ -130,4 +135,3 @@ export default function Navbar() {
     </nav>
   )
 }
-

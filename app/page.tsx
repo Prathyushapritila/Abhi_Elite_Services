@@ -1,9 +1,9 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
-import WhyChooseUs from './components/WhyChooseUs'
+import Sectors from './components/Sectors'
 import About from './components/About'
-import Portfolio from './components/Portfolio'
+import Work from './components/Work'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -13,9 +13,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
-      <WhyChooseUs />
+      <Sectors />
       <About />
-      <Portfolio />
+      <Work />
       <Contact />
       <Footer />
     </main>

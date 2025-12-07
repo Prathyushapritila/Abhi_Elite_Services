@@ -1,50 +1,54 @@
+'use client'
+
+import Image from 'next/image'
+
 export default function About() {
-  const facts = [
-    'Multi-domain expertise',
-    'Client-centric planning',
-    'Execution support from start to finish',
+  const benefits = [
+    'One person to call',
+    'Clear timelines and budgets',
+    'Support from planning to wrap-up',
   ]
 
   return (
-    <section id="about" className="py-20 bg-sectionBackground">
-      <div className="container-custom">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Content */}
-          <div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-textMain mb-6">
-              About Abhi Elite Services
-            </h2>
-            <div className="space-y-4 text-brandGray leading-relaxed">
-              <p>
-                Abhi Elite Services represents a unique approach to business services, bringing together construction, consultancy, digital solutions, event management, entertainment, and food & beverage services under one unified brand. This integrated model allows us to serve clients comprehensively, understanding their needs across multiple domains.
-              </p>
-              <p>
-                Our foundation is built on trust, quality, and long-term relationships. We believe that by offering diverse yet interconnected services, we can provide more value to our clients, streamline project coordination, and ensure consistent quality across all touchpoints.
-              </p>
-              <p>
-                Whether you're building a new facility, launching a digital presence, organizing a corporate event, or planning a celebration, Abhi Elite Services is your single point of contact for excellence across all these verticals.
-              </p>
+    <section id="about" className="section-padding bg-surface">
+      <div className="container-editorial">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Side - Image */}
+          <div className="relative">
+            <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80"
+                alt="Team collaboration"
+                fill
+                className="object-cover"
+              />
             </div>
+            {/* Decorative frame element */}
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-brandGray/20 bg-backgroundWarm rounded-sm -z-10"></div>
           </div>
 
-          {/* Right Side - Info Card */}
-          <div className="bg-backgroundMain rounded-lg p-8 shadow-lg border border-gray-200">
-            <h3 className="font-serif text-2xl font-semibold text-textMain mb-6">
-              What We Offer
-            </h3>
-            <ul className="space-y-4">
-              {facts.map((fact, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-brandOrange mr-3 text-xl">✓</span>
-                  <span className="text-brandGray text-lg">{fact}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 pt-8 border-t border-gray-200">
-              <p className="text-textMain font-semibold mb-2">Our Commitment</p>
-              <p className="text-brandGray">
-                Delivering integrated solutions with attention to detail, professional expertise, and a commitment to exceeding expectations.
+          {/* Right Side - Content */}
+          <div>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-textMain mb-6">
+              Built to simplify real-world projects.
+            </h2>
+            
+            <div className="space-y-6 text-brandGray leading-relaxed mb-8">
+              <p className="text-lg">
+                Most projects need multiple services. A new office needs construction, digital branding, and maybe a launch event. A wedding needs event planning, entertainment, and catering. Usually, that means juggling 4–5 different vendors – a builder, a decorator, an event person, a caterer, a digital guy.
               </p>
+              <p>
+                Abhi Elite brings these under one team. Same communication style, same quality standards, same responsibility. You get smoother coordination, fewer misunderstandings, and one person to call when something needs attention.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="text-brandOrange mr-3 text-xl mt-1">✓</span>
+                  <span className="text-textMain font-medium">{benefit}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -52,4 +56,3 @@ export default function About() {
     </section>
   )
 }
-
