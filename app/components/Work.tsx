@@ -63,7 +63,7 @@ export default function Work() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative h-80 rounded-lg overflow-hidden border border-brandGray/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+              className="group relative h-80 rounded-xl overflow-hidden border border-brandGray/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               {/* Background Image */}
               <Image

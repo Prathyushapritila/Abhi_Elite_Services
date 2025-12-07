@@ -16,6 +16,7 @@ const config: Config = {
         textMain: '#191919',
         brandBlue: '#083B66',
         brandYellow: '#F3D94B',
+        headerCream: '#FFF8EF',
       },
       fontFamily: {
         serif: ['var(--font-serif)'],

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -42,21 +43,34 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-brandBlue shadow-lg">
+    <nav className="sticky top-0 z-50 bg-headerCream border-b border-gray-200 shadow-sm">
       <div className="container-editorial">
         <div className="flex items-center justify-between h-24 md:h-28">
-          {/* Unified Logo */}
+          {/* Unified Logo: ABHI image + Synergies text + tagline */}
           <Link 
             href="#home" 
-            className="flex flex-col items-start"
+            className="flex items-end gap-3"
             onClick={() => handleNavClick('home')}
             aria-label="Abhi Synergies Home"
           >
-            <div className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-brandOrange leading-tight">
-              ABHI SYNERGIES
+            {/* ABHI Logo Image */}
+            <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
+              <Image
+                src="/abhi-logo.png"
+                alt="Abhi"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
-            <div className="text-sm md:text-base font-medium text-brandYellow mt-0.5">
-              Rise Together
+            {/* Synergies text + tagline */}
+            <div className="flex flex-col">
+              <div className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-textMain leading-tight">
+                Synergies
+              </div>
+              <div className="text-xs md:text-sm font-medium text-brandGray mt-0.5">
+                Rise Together
+              </div>
             </div>
           </Link>
 
@@ -67,10 +81,10 @@ export default function Navbar() {
                 key={link.id}
                 href={link.href}
                 onClick={() => handleNavClick(link.id)}
-                className={`relative text-sm font-medium tracking-wide transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 focus:ring-offset-brandBlue rounded px-2 py-1 ${
+                className={`relative text-sm font-medium tracking-wide transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 rounded px-2 py-1 ${
                   activeSection === link.id
                     ? 'text-brandOrange'
-                    : 'text-white hover:text-brandOrange'
+                    : 'text-textMain hover:text-brandOrange'
                 }`}
               >
                 {link.name}
@@ -84,7 +98,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-white hover:text-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 focus:ring-offset-brandBlue"
+            className="md:hidden p-2 rounded-md text-textMain hover:text-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2"
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
@@ -108,7 +122,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden pb-6 border-t border-white/20 mt-2">
+          <div className="md:hidden pb-6 border-t border-gray-200 mt-2">
             <div className="flex flex-col space-y-2 pt-4">
               {navLinks.map((link) => (
                 <Link
@@ -118,7 +132,7 @@ export default function Navbar() {
                   className={`px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 ${
                     activeSection === link.id
                       ? 'text-brandOrange bg-brandOrange/10'
-                      : 'text-white hover:text-brandOrange hover:bg-white/10'
+                      : 'text-textMain hover:text-brandOrange hover:bg-gray-50'
                   }`}
                 >
                   {link.name}

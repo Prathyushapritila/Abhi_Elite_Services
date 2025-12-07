@@ -11,11 +11,9 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative section-padding bg-backgroundWarm overflow-hidden">
-      {/* Frame border - echoing logo square */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-8 left-8 right-8 bottom-8 border border-brandGray/20 rounded-sm"></div>
-      </div>
+    <section id="home" className="relative section-padding bg-gradient-to-br from-backgroundWarm via-white to-backgroundWarm overflow-hidden">
+      {/* Soft gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-transparent pointer-events-none"></div>
       
       <div className="container-editorial relative z-10">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -51,8 +49,8 @@ export default function Hero() {
 
           {/* Right Side - Offset Image Card */}
           <div className="relative hidden md:block">
-            {/* Main image card with border and shadow */}
-            <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden border border-brandGray/20 shadow-xl">
+            {/* Main image card with rounded corners and soft shadow */}
+            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-brandGray/10 shadow-2xl">
               <Image
                 src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
                 alt="Construction project"
@@ -62,7 +60,7 @@ export default function Hero() {
             </div>
             
             {/* Overlapping project card - offset to the left */}
-            <div className="absolute -bottom-8 -left-8 bg-surface border border-brandGray/20 rounded-lg p-6 shadow-lg max-w-[280px]">
+            <div className="absolute -bottom-8 -left-8 bg-surface border border-brandGray/20 rounded-xl p-6 shadow-lg max-w-[280px]">
               <div className="text-xs uppercase tracking-wide text-brandGray mb-2">Recent project</div>
               <div className="font-serif text-lg font-semibold text-textMain mb-2">
                 Residential project + Launch event + F&B catering

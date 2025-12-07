@@ -1,19 +1,32 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
     <footer className="bg-textMain text-white py-12">
       <div className="container-editorial">
-        {/* Top Section: Logo, Brand, and Social */}
+        {/* Top Section: Logo, Brand, Address, and Social */}
         <div className="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-white/10">
           {/* Unified Logo and Brand */}
           <div>
-            <div className="mb-4">
-              <div className="font-serif text-2xl md:text-3xl font-bold text-brandOrange leading-tight mb-1">
-                ABHI SYNERGIES
+            <div className="flex items-end gap-3 mb-4">
+              {/* ABHI Logo Image */}
+              <div className="relative w-16 h-16 flex-shrink-0">
+                <Image
+                  src="/abhi-logo.png"
+                  alt="Abhi"
+                  fill
+                  className="object-contain"
+                />
               </div>
-              <div className="text-sm md:text-base font-medium text-brandYellow">
-                Rise Together
+              {/* Synergies text + tagline */}
+              <div className="flex flex-col">
+                <div className="font-serif text-2xl font-bold text-brandOrange leading-tight">
+                  Synergies
+                </div>
+                <div className="text-xs font-medium text-white/70 mt-0.5">
+                  Rise Together
+                </div>
               </div>
             </div>
             <p className="text-sm text-white/70 mt-4">
@@ -24,7 +37,7 @@ export default function Footer() {
           {/* Address */}
           <div>
             <p className="font-semibold mb-3 text-sm">Address</p>
-            <div className="text-sm text-white/70 leading-relaxed">
+            <div className="text-sm text-white/70 leading-relaxed space-y-1">
               <p>Block: AG8</p>
               <p>Mathrus Apartment</p>
               <p>Opp: Zudio showroom Hyderguda Basheerbagh Road</p>

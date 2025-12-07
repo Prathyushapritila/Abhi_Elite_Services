@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react'
 import SectionHeader from './SectionHeader'
+import Image from 'next/image'
 
 interface FormData {
   name: string
@@ -113,55 +114,63 @@ export default function Contact() {
         />
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left Column - Contact Info */}
-          <div>
-            <div className="mb-6">
-              <h3 className="font-serif text-xl font-semibold text-textMain mb-2">Abhi Synergies</h3>
-              <p className="text-sm text-brandGray mb-1">Rise Together</p>
-            </div>
-            
-            <p className="text-lg text-brandGray mb-8 leading-relaxed">
-              Tell us about your project – whether it's construction, an event, digital work, or a combination.
-            </p>
-            
-            <div className="space-y-6 mb-8">
-              <div>
-                <p className="font-semibold text-textMain mb-1">Phone</p>
-                <a 
-                  href="tel:+919666155296" 
-                  className="text-brandGray hover:text-brandOrange transition-colors"
-                >
-                  +91 96661 55296
-                </a>
-              </div>
-              <div>
-                <p className="font-semibold text-textMain mb-1">Email</p>
-                <a 
-                  href="mailto:abhignainnovations@gmail.com" 
-                  className="text-brandGray hover:text-brandOrange transition-colors"
-                >
-                  abhignainnovations@gmail.com
-                </a>
-              </div>
-              <div>
-                <p className="font-semibold text-textMain mb-2">Address</p>
-                <div className="text-brandGray text-sm leading-relaxed">
-                  <p>Block: AG8</p>
-                  <p>Mathrus Apartment</p>
-                  <p>Opp: Zudio showroom Hyderguda Basheerbagh Road</p>
-                  <p>Hyderguda</p>
-                  <p>Hyderabad, Telangana 500029</p>
+          {/* Left Column - Founder Card and Address */}
+          <div className="space-y-6">
+            {/* Founder Card */}
+            <div className="bg-backgroundWarm border border-brandGray/20 rounded-xl p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="relative w-16 h-16 flex-shrink-0">
+                  <Image
+                    src="/abhi-logo.png"
+                    alt="Abhi Synergies"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex-1">
+                  <div className="text-xs uppercase tracking-wide text-brandGray mb-1">Founder</div>
+                  <h3 className="font-serif text-xl font-semibold text-textMain mb-2">Sriknth Pritila</h3>
+                  <div className="space-y-1.5 text-sm text-brandGray">
+                    <a 
+                      href="tel:+919666155296" 
+                      className="block hover:text-brandOrange transition-colors"
+                    >
+                      +91 96661 55296
+                    </a>
+                    <a 
+                      href="mailto:abhignainnovations@gmail.com" 
+                      className="block hover:text-brandOrange transition-colors"
+                    >
+                      abhignainnovations@gmail.com
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* Address Card */}
+            <div className="bg-backgroundWarm border border-brandGray/20 rounded-xl p-6 shadow-sm">
+              <h4 className="font-semibold text-textMain mb-4">Address</h4>
+              <div className="text-sm text-brandGray leading-relaxed space-y-1">
+                <p>Block: AG8</p>
+                <p>Mathrus Apartment</p>
+                <p>Opp: Zudio showroom Hyderguda Basheerbagh Road</p>
+                <p>Hyderguda</p>
+                <p>Hyderabad, Telangana 500029</p>
+              </div>
+            </div>
+
+            <p className="text-sm text-brandGray italic">
+              We'll get back to you as soon as we can.
+            </p>
           </div>
 
           {/* Right Column - Contact Form */}
           <div>
             {isSubmitted ? (
-              <div className="bg-brandOrange/10 border border-brandOrange/30 rounded-lg p-6 text-center">
+              <div className="bg-brandOrange/10 border border-brandOrange/30 rounded-xl p-6 text-center">
                 <p className="text-brandOrange font-semibold text-lg mb-2">✓ Thank you for your message!</p>
-                <p className="text-brandGray">We'll get back to you soon.</p>
+                <p className="text-brandGray">We'll get back to you as soon as we can.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
