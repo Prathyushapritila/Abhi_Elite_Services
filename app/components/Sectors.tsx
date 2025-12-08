@@ -6,79 +6,61 @@ import SectionHeader from './SectionHeader'
 interface Sector {
   title: string
   description: string
-  services: string[]
   imageUrl: string
 }
 
 const sectors: Sector[] = [
   {
-    title: 'Homes & apartments',
-    description: 'When building or renovating a home, you often need construction, interior design, digital branding (for renting or selling), and sometimes event planning for housewarming. We handle all of it.',
-    services: ['Construction + Interiors + Digital branding'],
-    imageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80',
+    title: 'Homes & Apartments',
+    description: 'Construction, interiors, digital listings and housewarming events handled by one team, so moving in feels joyful instead of stressful.',
+    imageUrl: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?w=600&q=80',
   },
   {
-    title: 'Businesses & offices',
-    description: 'Setting up a new office or expanding? We combine consultancy for planning and approvals, digital services for your online presence, and event management for launches or team gatherings.',
-    services: ['Consultancy + Digital + Events'],
-    imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
+    title: 'Businesses & Offices',
+    description: 'Planning, approvals, branding, office setup and launch events that help your business feel ready from day one.',
+    imageUrl: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&q=80',
   },
   {
-    title: 'Functions & celebrations',
-    description: 'Weddings, corporate launches, anniversaries – these need event coordination, entertainment, and food service working together seamlessly. One team, one point of contact.',
-    services: ['Events + Entertainment + F&B'],
-    imageUrl: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80',
+    title: 'Functions & Celebrations',
+    description: 'Weddings, family functions and community gatherings with décor, entertainment and catering that feel heartfelt and well-organised.',
+    imageUrl: 'https://images.unsplash.com/photo-1519744346363-dc63c0c14fd5?w=600&q=80',
   },
 ]
 
 export default function Sectors() {
   return (
-    <section id="sectors" className="section-padding bg-backgroundWarm relative">
-      {/* Subtle corner accent */}
-      <div className="absolute top-12 right-12 w-32 h-32 border-l border-t border-brandGray/10 rounded-tl-sm hidden lg:block"></div>
-      
-      <div className="container-editorial relative">
+    <section id="sectors" className="py-20 md:py-28 lg:py-32 bg-background relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           label="SECTORS"
           title="Where our services fit best"
           description="Most real-life plans cross over many areas at once. A home needs interiors and sometimes a housewarming. A new restaurant needs branding and a launch event. Here's how Abhi Synergies fits into different moments."
         />
 
-        <div className="space-y-8">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {sectors.map((sector, index) => (
             <div
               key={index}
-              className="grid md:grid-cols-2 gap-0 items-center bg-surface rounded-xl overflow-hidden border border-brandGray/10 shadow-md hover:shadow-lg transition-shadow duration-200 hover:-translate-y-1"
+              className="group bg-surface rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
             >
-              {/* Image with border */}
-              <div className={`relative h-64 md:h-80 ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
+              {/* Image */}
+              <div className="relative h-48 md:h-56">
                 <Image
                   src={sector.imageUrl}
                   alt={sector.title}
                   fill
-                  className="object-cover rounded-xl"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 border-r border-brandGray/10"></div>
               </div>
               
               {/* Content */}
-              <div className={`p-8 lg:p-12 ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
-                <h3 className="font-serif text-2xl md:text-3xl font-bold text-textMain mb-4">
+              <div className="p-6">
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-ink mb-3">
                   {sector.title}
                 </h3>
-                <p className="text-brandGray leading-relaxed mb-6">
+                <p className="text-muted leading-relaxed">
                   {sector.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {sector.services.map((service, i) => (
-                    <span
-                      key={i}
-                      className="inline-block px-4 py-2 bg-brandOrange/10 text-brandOrange text-sm font-medium rounded-full border border-brandOrange/20"
-                    >
-                      {service}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
           ))}

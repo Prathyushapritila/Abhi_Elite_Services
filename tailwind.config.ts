@@ -9,14 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brandOrange: '#D87A2A',
-        brandGray: '#6F7072',
-        backgroundWarm: '#F9F7F3',
-        surface: '#FFFFFF',
-        textMain: '#191919',
-        brandBlue: '#083B66',
-        brandYellow: '#F3D94B',
-        headerCream: '#FFF8EF',
+        // Brand colors
+        brand: '#EA6A1F', // Brand orange (primary accent)
+        brandGold: '#FACC15', // Soft gold accent (optional)
+        // Neutrals
+        background: '#F9F5F0', // Soft warm cream (main page background)
+        surface: '#FFFFFF', // Surface / cards
+        ink: '#0F172A', // Dark text (slate/navy)
+        muted: '#6B7280', // Muted text (slate gray)
+        // Deep accent for header/footer
+        deep: '#020617', // Very deep navy/charcoal
+        // Legacy support (keeping for compatibility)
+        brandOrange: '#EA6A1F',
+        brandGray: '#6B7280',
+        backgroundWarm: '#F9F5F0',
+        textMain: '#0F172A',
       },
       fontFamily: {
         serif: ['var(--font-serif)'],
@@ -25,10 +32,10 @@ const config: Config = {
       letterSpacing: {
         'wide': '0.05em',
         'wider': '0.1em',
+        'widest': '0.2em',
       },
     },
   },
   plugins: [],
 }
 export default config
-

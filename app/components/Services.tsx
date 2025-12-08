@@ -15,7 +15,7 @@ const services: Service[] = [
     id: 'constructions',
     title: 'Constructions & Innovations',
     description: 'From homes and apartments to offices and shops, we help shape spaces that are practical, comfortable and ready to welcome people.',
-    imageUrl: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=400&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&q=80',
   },
   {
     id: 'consultancy',
@@ -32,14 +32,14 @@ const services: Service[] = [
   {
     id: 'events',
     title: 'Event Management',
-    description: 'From small gatherings to big functions, we take care of stage, sound, decor and flow so you and your guests can simply show up and enjoy.',
-    imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80',
+    description: 'From small gatherings to big functions, we take care of stage, sound, décor and flow so you and your guests can simply show up and enjoy.',
+    imageUrl: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=80',
   },
   {
     id: 'entertainment',
     title: 'Entertainments',
     description: 'Live performances, cultural programs and curated line-ups that add energy, emotion and fun to your event, without feeling chaotic.',
-    imageUrl: 'https://images.unsplash.com/photo-1464375117522-1311dd6d0cd7?w=400&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&q=80',
   },
   {
     id: 'fnb',
@@ -51,15 +51,15 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section id="services" className="section-padding bg-surface">
-      <div className="container-editorial">
+    <section id="services" className="py-20 md:py-28 lg:py-32 bg-surface">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Column - Intro Text */}
           <div>
             <SectionHeader
               label="SERVICES"
               title="Services under Abhi Synergies"
-              description="One brand, many ways to help. Whether you are building a home, opening a business, planning a celebration or launching something new, Abhi Synergies connects the pieces — construction, planning, digital presence, events, entertainment and food — so everything feels like one smooth plan."
+              description="One brand, many ways to help. Whether you're building a home, opening a business, planning a celebration or launching something new, Abhi Synergies connects the pieces — construction, planning, digital presence, events, entertainment and food — so everything feels like one smooth plan."
             />
           </div>
 
@@ -68,10 +68,10 @@ export default function Services() {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="group flex gap-4 p-5 rounded-xl border border-brandGray/10 hover:border-brandOrange/40 hover:shadow-lg transition-all duration-200 bg-surface hover:-translate-y-1"
+                className="group flex gap-4 p-5 rounded-2xl border border-slate-200 bg-surface shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
               >
-                {/* Image Thumbnail with border */}
-                <div className="relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden border border-brandGray/10 shadow-md">
+                {/* Image Thumbnail */}
+                <div className="relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden shadow-md">
                   <Image
                     src={service.imageUrl}
                     alt={service.title}
@@ -82,10 +82,10 @@ export default function Services() {
                 
                 {/* Content */}
                 <div className="flex-1">
-                  <h3 className="font-serif text-lg font-semibold text-textMain mb-1.5">
+                  <h3 className="font-serif text-lg font-semibold text-ink mb-1.5">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-brandGray leading-relaxed">
+                  <p className="text-sm text-muted leading-relaxed">
                     {service.description}
                   </p>
                 </div>

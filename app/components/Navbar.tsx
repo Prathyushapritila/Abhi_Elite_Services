@@ -43,55 +43,53 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-headerCream border-b border-gray-200 shadow-sm">
-      <div className="container-editorial">
-        <div className="flex items-center justify-between h-24 md:h-28">
-          {/* Unified Logo: ABHI image + Synergies text (one line) + tagline below */}
+    <header className="sticky top-0 z-50 bg-deep shadow-sm">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20 md:h-24">
+          {/* Combined Logo Block */}
           <Link 
             href="#home" 
-            className="flex flex-col"
+            className="flex items-center gap-3"
             onClick={() => handleNavClick('home')}
             aria-label="Abhi Synergies Home"
           >
-            {/* ABHI logo + Synergies in one line */}
-            <div className="flex items-center gap-3">
-              {/* ABHI Logo Image */}
-              <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
-                <Image
-                  src="/abhi-logo.png"
-                  alt="Abhi"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-              {/* Synergies text - same orange, same visual height */}
-              <div className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-brandOrange leading-tight">
+            {/* ABHI Logo Image */}
+            <div className="relative w-14 h-14 md:w-16 md:h-16 flex-shrink-0">
+              <Image
+                src="/abhi-logo.png"
+                alt="Abhi"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            {/* Synergies text + tagline */}
+            <div className="flex flex-col">
+              <div className="text-xl md:text-2xl font-semibold text-brand leading-tight">
                 Synergies
               </div>
-            </div>
-            {/* Tagline below, centered */}
-            <div className="text-xs md:text-sm font-medium text-brandGray mt-1 ml-[calc(4rem+0.75rem)] md:ml-[calc(5rem+0.75rem)]">
-              Rise Together
+              <div className="text-xs md:text-sm text-slate-200 tracking-[0.2em] uppercase mt-0.5">
+                Rise Together
+              </div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-8 lg:space-x-10">
             {navLinks.map((link) => (
               <Link
                 key={link.id}
                 href={link.href}
                 onClick={() => handleNavClick(link.id)}
-                className={`relative text-sm font-medium tracking-wide transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 rounded px-2 py-1 ${
+                className={`relative text-sm md:text-base text-slate-100 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-deep rounded px-2 py-1 ${
                   activeSection === link.id
-                    ? 'text-brandOrange'
-                    : 'text-[#222222] hover:text-brandOrange'
+                    ? 'text-brand'
+                    : 'hover:text-brand'
                 }`}
               >
                 {link.name}
                 {activeSection === link.id && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brandOrange"></span>
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand"></span>
                 )}
               </Link>
             ))}
@@ -100,7 +98,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-[#222222] hover:text-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2"
+            className="md:hidden p-2 rounded-md text-slate-100 hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-deep"
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
@@ -124,17 +122,17 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden pb-6 border-t border-gray-200 mt-2">
+          <div className="md:hidden pb-6 border-t border-slate-700 mt-2">
             <div className="flex flex-col space-y-2 pt-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.id}
                   href={link.href}
                   onClick={() => handleNavClick(link.id)}
-                  className={`px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 ${
+                  className={`px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 ${
                     activeSection === link.id
-                      ? 'text-brandOrange bg-brandOrange/10'
-                      : 'text-[#222222] hover:text-brandOrange hover:bg-gray-50'
+                      ? 'text-brand bg-brand/10'
+                      : 'text-slate-100 hover:text-brand hover:bg-slate-800'
                   }`}
                 >
                   {link.name}
@@ -143,7 +141,7 @@ export default function Navbar() {
             </div>
           </div>
         )}
-      </div>
-    </nav>
+      </nav>
+    </header>
   )
 }

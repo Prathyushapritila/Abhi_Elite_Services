@@ -15,8 +15,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Abhi Synergies - Rise Together',
-  description: 'Abhi Synergies brings construction, consultancy, digital, events, entertainment and F&B under one team, so clients and partners rise together.',
+  title: 'Abhi Synergies · Rise Together',
+  description: 'One team for spaces, stories and celebrations. Abhi Synergies brings construction, consultancy, digital, events, entertainment and F&B under one team.',
 }
 
 export default function RootLayout({
@@ -26,10 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased bg-background text-ink">
         {children}
       </body>
     </html>
   )
 }
-

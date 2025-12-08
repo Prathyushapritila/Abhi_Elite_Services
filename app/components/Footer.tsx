@@ -3,15 +3,15 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F5F0E8] text-textMain py-12">
-      <div className="container-editorial">
-        {/* Top Section: Logo, Brand, Address, and Social */}
-        <div className="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-brandGray/20">
-          {/* Unified Logo and Brand */}
+    <footer className="bg-deep text-white py-10 md:py-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top Section: Logo, Services, Address, and Social */}
+        <div className="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-white/10">
+          {/* Left: Combined Logo */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               {/* ABHI Logo Image */}
-              <div className="relative w-16 h-16 flex-shrink-0">
+              <div className="relative w-12 h-12 flex-shrink-0">
                 <Image
                   src="/abhi-logo.png"
                   alt="Abhi"
@@ -21,23 +21,23 @@ export default function Footer() {
               </div>
               {/* Synergies text + tagline */}
               <div className="flex flex-col">
-                <div className="font-serif text-2xl font-bold text-brandOrange leading-tight">
+                <div className="text-lg font-semibold text-brand leading-tight">
                   Synergies
                 </div>
-                <div className="text-xs font-medium text-brandGray mt-0.5">
+                <div className="text-xs text-slate-200 tracking-[0.2em] uppercase mt-0.5">
                   Rise Together
                 </div>
               </div>
             </div>
-            <p className="text-sm text-brandGray mt-4">
+            <p className="text-sm text-slate-300 mt-4">
               Construction · Consultancy · Digital · Events · Entertainments · F&B
             </p>
           </div>
 
-          {/* Address */}
+          {/* Middle: Address */}
           <div>
-            <p className="font-semibold mb-3 text-sm text-textMain">Address</p>
-            <div className="text-sm text-brandGray leading-relaxed space-y-1">
+            <p className="font-semibold mb-3 text-sm text-white">Address</p>
+            <div className="text-sm text-slate-300 leading-relaxed space-y-1">
               <p>Block: AG8</p>
               <p>Mathrus Apartment</p>
               <p>Opp: Zudio showroom Hyderguda-Basheerbagh Road</p>
@@ -46,19 +46,19 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Social Icons */}
+          {/* Right: Social Icons */}
           <div>
-            <p className="font-semibold mb-3 text-sm text-textMain">Connect with us</p>
+            <p className="font-semibold mb-3 text-sm text-white">Connect with us</p>
             <div className="flex gap-4">
               <a
                 href="https://instagram.com/abhisynergies"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-brandGray/20 hover:border-brandOrange hover:bg-brandOrange/10 transition-all duration-300 group"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-brand hover:bg-brand/10 transition-all duration-300 group"
               >
                 <svg
-                  className="w-5 h-5 text-brandGray group-hover:text-brandOrange transition-colors"
+                  className="w-5 h-5 text-slate-300 group-hover:text-brand transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -71,10 +71,10 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Message us on WhatsApp"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-brandGray/20 hover:border-brandOrange hover:bg-brandOrange/10 transition-all duration-300 group"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-brand hover:bg-brand/10 transition-all duration-300 group"
               >
                 <svg
-                  className="w-5 h-5 text-brandGray group-hover:text-brandOrange transition-colors"
+                  className="w-5 h-5 text-slate-300 group-hover:text-brand transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -87,10 +87,10 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-brandGray/20 hover:border-brandOrange hover:bg-brandOrange/10 transition-all duration-300 group"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-brand hover:bg-brand/10 transition-all duration-300 group"
               >
                 <svg
-                  className="w-5 h-5 text-brandGray group-hover:text-brandOrange transition-colors"
+                  className="w-5 h-5 text-slate-300 group-hover:text-brand transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -103,19 +103,19 @@ export default function Footer() {
 
         {/* Bottom Section: Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p className="text-brandGray">
+          <p className="text-slate-300">
             © Abhi Synergies. Rise Together. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link
               href="#"
-              className="text-brandGray hover:text-brandOrange transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 rounded px-2 py-1"
+              className="text-slate-300 hover:text-brand transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-deep rounded px-2 py-1"
             >
               Privacy
             </Link>
             <Link
               href="#"
-              className="text-brandGray hover:text-brandOrange transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 rounded px-2 py-1"
+              className="text-slate-300 hover:text-brand transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-deep rounded px-2 py-1"
             >
               Terms
             </Link>
