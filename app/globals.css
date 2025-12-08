@@ -8,7 +8,7 @@
   }
   
   body {
-    @apply bg-background text-ink;
+    @apply bg-[#FFF8F0] text-ink;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -18,7 +18,7 @@
 
 @layer components {
   .container-editorial {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-4 md:px-6;
   }
 }
 

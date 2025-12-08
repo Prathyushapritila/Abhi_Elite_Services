@@ -106,16 +106,16 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 md:py-28 lg:py-32 bg-surface">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-16 md:py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         <SectionHeader
           label="CONTACT"
-          title="Share your plan, we'll shape the rest."
+          title="Tell us what you are planning"
         />
 
         <div className="mb-12 max-w-2xl">
           <p className="text-base md:text-lg text-muted leading-relaxed">
-            Tell us what you're dreaming of — a home, a function, a launch, a new space. Even if it's still just a rough idea, we're happy to listen and suggest a path that feels possible and relaxed.
+            Share basic details about your plan. It can be a rough idea — we will call or message you back, ask a few questions and then suggest what services are really needed.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ export default function Contact() {
           {/* Left Column - Founder & Contact Card */}
           <div className="space-y-6">
             {/* Founder Card */}
-            <div className="bg-background border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <div className="bg-[#FFF8F0] border border-slate-200 rounded-2xl p-6 shadow-sm">
               <div className="flex items-start gap-4">
                 <div className="relative w-16 h-16 flex-shrink-0">
                   <Image
@@ -135,17 +135,17 @@ export default function Contact() {
                 </div>
                 <div className="flex-1">
                   <div className="text-xs uppercase tracking-wide text-muted mb-1">Founder</div>
-                  <h3 className="font-serif text-xl font-semibold text-ink mb-2">Srikant Pritila</h3>
+                  <h3 className="font-serif text-xl font-semibold text-ink mb-2">Srikanth Pritila</h3>
                   <div className="space-y-1.5 text-sm text-muted">
                     <a 
                       href="tel:+919666155296" 
-                      className="block hover:text-brand transition-colors"
+                      className="block hover:text-[#EA6A1F] transition-colors"
                     >
                       +91 96661 55296
                     </a>
                     <a 
                       href="mailto:abhignainnovations@gmail.com" 
-                      className="block hover:text-brand transition-colors"
+                      className="block hover:text-[#EA6A1F] transition-colors"
                     >
                       abhignainnovations@gmail.com
                     </a>
@@ -155,7 +155,7 @@ export default function Contact() {
             </div>
 
             {/* Address Card */}
-            <div className="bg-background border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <div className="bg-[#FFF8F0] border border-slate-200 rounded-2xl p-6 shadow-sm">
               <h4 className="font-semibold text-ink mb-4">Address</h4>
               <div className="text-sm text-muted leading-relaxed space-y-1">
                 <p>Block: AG8</p>
@@ -170,15 +170,15 @@ export default function Contact() {
           {/* Right Column - Contact Form */}
           <div>
             {isSubmitted ? (
-              <div className="bg-brand/10 border border-brand/30 rounded-2xl p-6 text-center">
-                <p className="text-brand font-semibold text-lg mb-2">✓ Thank you.</p>
+              <div className="bg-[#EA6A1F]/10 border border-[#EA6A1F]/30 rounded-2xl p-6 text-center">
+                <p className="text-[#EA6A1F] font-semibold text-lg mb-2">✓ Thank you.</p>
                 <p className="text-muted">We'll review your message and get back to you soon.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-ink mb-2">
-                    Name <span className="text-brand">*</span>
+                    Name <span className="text-[#EA6A1F]">*</span>
                   </label>
                   <input
                     type="text"
@@ -186,7 +186,7 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-all ${
+                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EA6A1F] transition-all ${
                       errors.name ? 'border-red-500' : 'border-slate-300'
                     }`}
                   />
@@ -195,7 +195,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-ink mb-2">
-                    Email <span className="text-brand">*</span>
+                    Email <span className="text-[#EA6A1F]">*</span>
                   </label>
                   <input
                     type="email"
@@ -203,7 +203,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-all ${
+                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EA6A1F] transition-all ${
                       errors.email ? 'border-red-500' : 'border-slate-300'
                     }`}
                   />
@@ -212,7 +212,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-semibold text-ink mb-2">
-                    Phone Number <span className="text-brand">*</span>
+                    Phone Number <span className="text-[#EA6A1F]">*</span>
                   </label>
                   <input
                     type="tel"
@@ -220,7 +220,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-all ${
+                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EA6A1F] transition-all ${
                       errors.phone ? 'border-red-500' : 'border-slate-300'
                     }`}
                   />
@@ -229,19 +229,19 @@ export default function Contact() {
 
                 <div>
                   <label className="block text-sm font-semibold text-ink mb-3">
-                    Service(s) needed <span className="text-brand">*</span>
+                    Service(s) needed <span className="text-[#EA6A1F]">*</span>
                   </label>
                   <div className="space-y-2">
                     {serviceOptions.map((option) => (
                       <label
                         key={option}
-                        className="flex items-center space-x-3 cursor-pointer p-2 rounded hover:bg-background transition-colors"
+                        className="flex items-center space-x-3 cursor-pointer p-2 rounded hover:bg-[#FFF8F0] transition-colors"
                       >
                         <input
                           type="checkbox"
                           checked={formData.services.includes(option)}
                           onChange={() => handleServiceToggle(option)}
-                          className="w-4 h-4 text-brand border-slate-300 rounded focus:ring-brand"
+                          className="w-4 h-4 text-[#EA6A1F] border-slate-300 rounded focus:ring-[#EA6A1F]"
                         />
                         <span className="text-muted">{option}</span>
                       </label>
@@ -252,7 +252,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-ink mb-2">
-                    Message <span className="text-brand">*</span>
+                    Message <span className="text-[#EA6A1F]">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -260,7 +260,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-all ${
+                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EA6A1F] transition-all ${
                       errors.message ? 'border-red-500' : 'border-slate-300'
                     }`}
                   ></textarea>
@@ -269,7 +269,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-brand text-white font-semibold rounded-lg shadow-md hover:bg-brand/90 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-brand focus:ring-offset-2"
+                  className="w-full px-8 py-4 bg-[#EA6A1F] text-white font-semibold rounded-lg shadow-md hover:bg-[#EA6A1F]/90 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-[#EA6A1F] focus:ring-offset-2"
                 >
                   Send Message
                 </button>

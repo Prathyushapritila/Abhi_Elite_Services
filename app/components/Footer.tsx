@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="bg-deep text-white py-10 md:py-14">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-slate-900 text-slate-200 py-10 md:py-14">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         {/* Top Section: Logo, Services, Address, and Social */}
         <div className="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-white/10">
           {/* Left: Combined Logo */}
@@ -21,7 +21,7 @@ export default function Footer() {
               </div>
               {/* Synergies text + tagline */}
               <div className="flex flex-col">
-                <div className="text-lg font-semibold text-brand leading-tight">
+                <div className="text-lg font-semibold text-[#EA6A1F] leading-tight">
                   Synergies
                 </div>
                 <div className="text-xs text-slate-200 tracking-[0.2em] uppercase mt-0.5">
@@ -55,10 +55,10 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-brand hover:bg-brand/10 transition-all duration-300 group"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-[#EA6A1F] hover:bg-[#EA6A1F]/10 transition-all duration-300 group"
               >
                 <svg
-                  className="w-5 h-5 text-slate-300 group-hover:text-brand transition-colors"
+                  className="w-5 h-5 text-slate-300 group-hover:text-[#EA6A1F] transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -71,10 +71,10 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Message us on WhatsApp"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-brand hover:bg-brand/10 transition-all duration-300 group"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-[#EA6A1F] hover:bg-[#EA6A1F]/10 transition-all duration-300 group"
               >
                 <svg
-                  className="w-5 h-5 text-slate-300 group-hover:text-brand transition-colors"
+                  className="w-5 h-5 text-slate-300 group-hover:text-[#EA6A1F] transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -87,10 +87,10 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-brand hover:bg-brand/10 transition-all duration-300 group"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-[#EA6A1F] hover:bg-[#EA6A1F]/10 transition-all duration-300 group"
               >
                 <svg
-                  className="w-5 h-5 text-slate-300 group-hover:text-brand transition-colors"
+                  className="w-5 h-5 text-slate-300 group-hover:text-[#EA6A1F] transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -109,13 +109,13 @@ export default function Footer() {
           <div className="flex gap-6">
             <Link
               href="#"
-              className="text-slate-300 hover:text-brand transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-deep rounded px-2 py-1"
+              className="text-slate-300 hover:text-[#EA6A1F] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#EA6A1F] focus:ring-offset-2 focus:ring-offset-slate-900 rounded px-2 py-1"
             >
               Privacy
             </Link>
             <Link
               href="#"
-              className="text-slate-300 hover:text-brand transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-deep rounded px-2 py-1"
+              className="text-slate-300 hover:text-[#EA6A1F] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#EA6A1F] focus:ring-offset-2 focus:ring-offset-slate-900 rounded px-2 py-1"
             >
               Terms
             </Link>

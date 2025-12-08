@@ -4,7 +4,6 @@ import Image from 'next/image'
 import SectionHeader from './SectionHeader'
 
 interface Project {
-  category: string
   title: string
   description: string
   imageUrl: string
@@ -12,26 +11,22 @@ interface Project {
 
 const projects: Project[] = [
   {
-    category: 'Apartments · Events · F&B',
-    title: 'New apartment block launch',
+    title: 'Apartment launch with housewarming function',
     description: 'Site readiness, ribbon-cutting event, guest flow and buffet, all handled as one connected plan.',
     imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
   },
   {
-    category: 'Retail · Digital · Events',
-    title: 'Store opening and online launch',
+    title: 'Office setup with small opening event',
     description: 'Interior finishing, soft opening, launch event and digital announcement posts coordinated together.',
-    imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80',
-  },
-  {
-    category: 'Offices · Consultancy',
-    title: 'Office setup and move-in',
-    description: 'Planning, vendor coordination and phased setup to help a growing team move in smoothly.',
     imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
   },
   {
-    category: 'Family functions',
-    title: 'Family celebration evening',
+    title: 'Restaurant launch with branding and music',
+    description: 'Planning, vendor coordination and phased setup to help a growing team move in smoothly.',
+    imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80',
+  },
+  {
+    title: 'Family function with stage, lights and buffet',
     description: 'Stage, lights, entertainment and food for a relaxed, intimate gathering.',
     imageUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80',
   },
@@ -39,19 +34,19 @@ const projects: Project[] = [
 
 export default function Work() {
   return (
-    <section id="work" className="py-20 md:py-28 lg:py-32 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="work" className="py-16 md:py-20 bg-transparent">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         <SectionHeader
           label="PROJECTS"
-          title="A few ways we've helped clients"
-          description="Each project below combines more than one service. That's where Abhi Synergies feels most at home — in the spaces where construction, planning, digital work, events, entertainment and food all meet."
+          title="Examples of how we combine services"
+          description="These are sample ways we mix construction, events, digital and F&B together. Your plan can be similar or fully different — we listen first and then suggest."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative h-80 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
+              className="group relative h-80 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
             >
               {/* Background Image */}
               <Image
@@ -66,9 +61,6 @@ export default function Work() {
               
               {/* Content - bottom left */}
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <span className="inline-block px-3 py-1 bg-brand text-white text-xs font-semibold rounded-full mb-2">
-                  {project.category}
-                </span>
                 <h3 className="font-serif text-xl md:text-2xl font-semibold mb-2">
                   {project.title}
                 </h3>

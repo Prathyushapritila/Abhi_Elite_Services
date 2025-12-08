@@ -10,7 +10,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'services', 'sectors', 'about', 'work', 'contact']
+      const sections = ['home', 'services', 'who-we-help', 'about', 'work', 'contact']
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -36,15 +36,15 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Services', href: '#services', id: 'services' },
-    { name: 'Sectors', href: '#sectors', id: 'sectors' },
+    { name: 'Who we help', href: '#who-we-help', id: 'who-we-help' },
     { name: 'About', href: '#about', id: 'about' },
     { name: 'Work', href: '#work', id: 'work' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-deep shadow-sm">
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+      <nav className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Combined Logo Block */}
           <Link 
@@ -65,10 +65,10 @@ export default function Navbar() {
             </div>
             {/* Synergies text + tagline */}
             <div className="flex flex-col">
-              <div className="text-xl md:text-2xl font-semibold text-brand leading-tight">
+              <div className="text-xl md:text-2xl font-semibold text-[#EA6A1F] leading-tight">
                 Synergies
               </div>
-              <div className="text-xs md:text-sm text-slate-200 tracking-[0.2em] uppercase mt-0.5">
+              <div className="text-xs md:text-sm text-slate-500 tracking-[0.2em] uppercase mt-0.5">
                 Rise Together
               </div>
             </div>
@@ -81,15 +81,15 @@ export default function Navbar() {
                 key={link.id}
                 href={link.href}
                 onClick={() => handleNavClick(link.id)}
-                className={`relative text-sm md:text-base text-slate-100 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-deep rounded px-2 py-1 ${
+                className={`relative text-sm md:text-base text-slate-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 rounded px-2 py-1 ${
                   activeSection === link.id
-                    ? 'text-brand'
-                    : 'hover:text-brand'
+                    ? 'text-[#EA6A1F]'
+                    : 'hover:text-[#EA6A1F]'
                 }`}
               >
                 {link.name}
                 {activeSection === link.id && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand"></span>
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#EA6A1F]"></span>
                 )}
               </Link>
             ))}
@@ -98,7 +98,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-slate-100 hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-deep"
+            className="md:hidden p-2 rounded-md text-slate-800 hover:text-[#EA6A1F] focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
@@ -122,7 +122,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden pb-6 border-t border-slate-700 mt-2">
+          <div className="md:hidden pb-6 border-t border-slate-200 mt-2">
             <div className="flex flex-col space-y-2 pt-4">
               {navLinks.map((link) => (
                 <Link
@@ -131,8 +131,8 @@ export default function Navbar() {
                   onClick={() => handleNavClick(link.id)}
                   className={`px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 ${
                     activeSection === link.id
-                      ? 'text-brand bg-brand/10'
-                      : 'text-slate-100 hover:text-brand hover:bg-slate-800'
+                      ? 'text-[#EA6A1F] bg-[#EA6A1F]/10'
+                      : 'text-slate-800 hover:text-[#EA6A1F] hover:bg-slate-50'
                   }`}
                 >
                   {link.name}
