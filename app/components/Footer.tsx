@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="bg-textMain text-white py-12">
+    <footer className="bg-[#F5F0E8] text-textMain py-12">
       <div className="container-editorial">
         {/* Top Section: Logo, Brand, Address, and Social */}
-        <div className="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-white/10">
+        <div className="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-brandGray/20">
           {/* Unified Logo and Brand */}
           <div>
-            <div className="flex items-end gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-4">
               {/* ABHI Logo Image */}
               <div className="relative w-16 h-16 flex-shrink-0">
                 <Image
@@ -24,23 +24,23 @@ export default function Footer() {
                 <div className="font-serif text-2xl font-bold text-brandOrange leading-tight">
                   Synergies
                 </div>
-                <div className="text-xs font-medium text-white/70 mt-0.5">
+                <div className="text-xs font-medium text-brandGray mt-0.5">
                   Rise Together
                 </div>
               </div>
             </div>
-            <p className="text-sm text-white/70 mt-4">
+            <p className="text-sm text-brandGray mt-4">
               Construction · Consultancy · Digital · Events · Entertainments · F&B
             </p>
           </div>
 
           {/* Address */}
           <div>
-            <p className="font-semibold mb-3 text-sm">Address</p>
-            <div className="text-sm text-white/70 leading-relaxed space-y-1">
+            <p className="font-semibold mb-3 text-sm text-textMain">Address</p>
+            <div className="text-sm text-brandGray leading-relaxed space-y-1">
               <p>Block: AG8</p>
               <p>Mathrus Apartment</p>
-              <p>Opp: Zudio showroom Hyderguda Basheerbagh Road</p>
+              <p>Opp: Zudio showroom Hyderguda-Basheerbagh Road</p>
               <p>Hyderguda</p>
               <p>Hyderabad, Telangana 500029</p>
             </div>
@@ -48,17 +48,17 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div>
-            <p className="font-semibold mb-3 text-sm">Connect with us</p>
+            <p className="font-semibold mb-3 text-sm text-textMain">Connect with us</p>
             <div className="flex gap-4">
               <a
                 href="https://instagram.com/abhisynergies"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-brandOrange hover:bg-brandOrange/10 transition-all duration-300 group"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-brandGray/20 hover:border-brandOrange hover:bg-brandOrange/10 transition-all duration-300 group"
               >
                 <svg
-                  className="w-5 h-5 text-white/70 group-hover:text-brandOrange transition-colors"
+                  className="w-5 h-5 text-brandGray group-hover:text-brandOrange transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -71,10 +71,10 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Message us on WhatsApp"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-brandOrange hover:bg-brandOrange/10 transition-all duration-300 group"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-brandGray/20 hover:border-brandOrange hover:bg-brandOrange/10 transition-all duration-300 group"
               >
                 <svg
-                  className="w-5 h-5 text-white/70 group-hover:text-brandOrange transition-colors"
+                  className="w-5 h-5 text-brandGray group-hover:text-brandOrange transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -87,10 +87,10 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 hover:border-brandOrange hover:bg-brandOrange/10 transition-all duration-300 group"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-brandGray/20 hover:border-brandOrange hover:bg-brandOrange/10 transition-all duration-300 group"
               >
                 <svg
-                  className="w-5 h-5 text-white/70 group-hover:text-brandOrange transition-colors"
+                  className="w-5 h-5 text-brandGray group-hover:text-brandOrange transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -103,19 +103,19 @@ export default function Footer() {
 
         {/* Bottom Section: Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p className="text-white/70">
+          <p className="text-brandGray">
             © Abhi Synergies. Rise Together. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link
               href="#"
-              className="text-white/70 hover:text-brandOrange transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 focus:ring-offset-textMain rounded px-2 py-1"
+              className="text-brandGray hover:text-brandOrange transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 rounded px-2 py-1"
             >
               Privacy
             </Link>
             <Link
               href="#"
-              className="text-white/70 hover:text-brandOrange transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 focus:ring-offset-textMain rounded px-2 py-1"
+              className="text-brandGray hover:text-brandOrange transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 rounded px-2 py-1"
             >
               Terms
             </Link>

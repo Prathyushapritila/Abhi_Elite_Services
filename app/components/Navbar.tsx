@@ -46,31 +46,33 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-headerCream border-b border-gray-200 shadow-sm">
       <div className="container-editorial">
         <div className="flex items-center justify-between h-24 md:h-28">
-          {/* Unified Logo: ABHI image + Synergies text + tagline */}
+          {/* Unified Logo: ABHI image + Synergies text (one line) + tagline below */}
           <Link 
             href="#home" 
-            className="flex items-end gap-3"
+            className="flex flex-col"
             onClick={() => handleNavClick('home')}
             aria-label="Abhi Synergies Home"
           >
-            {/* ABHI Logo Image */}
-            <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
-              <Image
-                src="/abhi-logo.png"
-                alt="Abhi"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-            {/* Synergies text + tagline */}
-            <div className="flex flex-col">
-              <div className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-textMain leading-tight">
+            {/* ABHI logo + Synergies in one line */}
+            <div className="flex items-center gap-3">
+              {/* ABHI Logo Image */}
+              <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
+                <Image
+                  src="/abhi-logo.png"
+                  alt="Abhi"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              {/* Synergies text - same orange, same visual height */}
+              <div className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-brandOrange leading-tight">
                 Synergies
               </div>
-              <div className="text-xs md:text-sm font-medium text-brandGray mt-0.5">
-                Rise Together
-              </div>
+            </div>
+            {/* Tagline below, centered */}
+            <div className="text-xs md:text-sm font-medium text-brandGray mt-1 ml-[calc(4rem+0.75rem)] md:ml-[calc(5rem+0.75rem)]">
+              Rise Together
             </div>
           </Link>
 
@@ -84,7 +86,7 @@ export default function Navbar() {
                 className={`relative text-sm font-medium tracking-wide transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 rounded px-2 py-1 ${
                   activeSection === link.id
                     ? 'text-brandOrange'
-                    : 'text-textMain hover:text-brandOrange'
+                    : 'text-[#222222] hover:text-brandOrange'
                 }`}
               >
                 {link.name}
@@ -98,7 +100,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-textMain hover:text-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2"
+            className="md:hidden p-2 rounded-md text-[#222222] hover:text-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2"
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
@@ -132,7 +134,7 @@ export default function Navbar() {
                   className={`px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brandOrange focus:ring-offset-2 ${
                     activeSection === link.id
                       ? 'text-brandOrange bg-brandOrange/10'
-                      : 'text-textMain hover:text-brandOrange hover:bg-gray-50'
+                      : 'text-[#222222] hover:text-brandOrange hover:bg-gray-50'
                   }`}
                 >
                   {link.name}

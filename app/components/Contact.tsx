@@ -113,6 +113,12 @@ export default function Contact() {
           title="Share your plan, we'll shape the rest."
         />
 
+        <div className="mb-8 max-w-2xl">
+          <p className="text-lg text-brandGray leading-relaxed">
+            Tell us what you're dreaming of — a home, a function, a launch, a new space. Even if it's still just a rough idea, we're happy to listen and suggest a path that feels possible and relaxed.
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Founder Card and Address */}
           <div className="space-y-6">
@@ -129,7 +135,7 @@ export default function Contact() {
                 </div>
                 <div className="flex-1">
                   <div className="text-xs uppercase tracking-wide text-brandGray mb-1">Founder</div>
-                  <h3 className="font-serif text-xl font-semibold text-textMain mb-2">Sriknth Pritila</h3>
+                  <h3 className="font-serif text-xl font-semibold text-textMain mb-2">Srikant Pritila</h3>
                   <div className="space-y-1.5 text-sm text-brandGray">
                     <a 
                       href="tel:+919666155296" 
@@ -154,15 +160,11 @@ export default function Contact() {
               <div className="text-sm text-brandGray leading-relaxed space-y-1">
                 <p>Block: AG8</p>
                 <p>Mathrus Apartment</p>
-                <p>Opp: Zudio showroom Hyderguda Basheerbagh Road</p>
+                <p>Opp: Zudio showroom Hyderguda-Basheerbagh Road</p>
                 <p>Hyderguda</p>
                 <p>Hyderabad, Telangana 500029</p>
               </div>
             </div>
-
-            <p className="text-sm text-brandGray italic">
-              We'll get back to you as soon as we can.
-            </p>
           </div>
 
           {/* Right Column - Contact Form */}

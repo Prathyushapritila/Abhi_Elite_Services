@@ -16,7 +16,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Side - Image (slightly outside container) */}
           <div className="relative">
-            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-brandGray/20 shadow-2xl md:-ml-8">
+            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-brandGray/20 shadow-lg md:-ml-8">
               <Image
                 src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80"
                 alt="Team collaboration"
@@ -36,15 +36,15 @@ export default function About() {
             />
             
             <div className="space-y-6 text-brandGray leading-relaxed mb-8">
-              <p className="text-lg">
-                Most projects need multiple services. A new office needs construction, digital branding, and maybe a launch event. A wedding needs event planning, entertainment, and catering. Usually, that means juggling 4–5 different vendors – a builder, a decorator, an event person, a caterer, a digital guy.
+              <p>
+                Many projects don't fail because of bad ideas — they become stressful because too many people are involved and no one sees the whole picture. A new office may need construction, approvals, branding, events and catering. A family celebration might need decoration, food, music and stage support.
               </p>
               <p>
-                At Abhi Synergies, we believe in rising together with our clients and partners. We bring these services under one team – same communication style, same quality standards, same responsibility. You get smoother coordination, fewer misunderstandings, and one person to call when something needs attention.
+                Abhi Synergies exists to bring these threads together. We work as one team, with one style of communication and one sense of responsibility. Our goal is simple: make your plans feel lighter, kinder and more organised, so you can focus on the people and moments that matter.
               </p>
             </div>
 
-            <div className="space-y-3 mb-8">
+            <div className="space-y-4 mb-8">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start">
                   <span className="text-brandOrange mr-3 text-xl mt-1">✓</span>
@@ -54,9 +54,9 @@ export default function About() {
             </div>
 
             {/* Testimonial */}
-            <div className="bg-backgroundWarm border-l-4 border-brandOrange rounded-lg p-6 mb-8">
+            <div className="bg-backgroundWarm border-l-4 border-brandOrange rounded-lg p-6">
               <p className="text-brandGray italic leading-relaxed mb-3">
-                "Working with Abhi Synergies made our office launch seamless. They handled construction, branding, and the opening event – all with one point of contact. Exactly what we needed."
+                "Abhi Synergies handled our construction, launch event and catering as a single team. It felt calm, organised and personal from start to finish."
               </p>
               <p className="text-sm text-brandGray">— Recent client</p>
             </div>

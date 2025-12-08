@@ -14,37 +14,37 @@ const services: Service[] = [
   {
     id: 'constructions',
     title: 'Constructions & Innovations',
-    description: 'Residential and commercial projects, renovations, interiors and on-site coordination.',
+    description: 'From homes and apartments to offices and shops, we help shape spaces that are practical, comfortable and ready to welcome people.',
     imageUrl: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=400&q=80',
   },
   {
     id: 'consultancy',
     title: 'Consultancy Services',
-    description: 'Planning, approvals, budgeting and vendor coordination so projects move smoothly.',
+    description: 'We sit with you, listen to your ideas, and help with planning, approvals, budgeting and choosing the right partners so your project doesn't feel overwhelming.',
     imageUrl: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80',
   },
   {
     id: 'digital',
     title: 'Digital Services',
-    description: 'Brand identity, websites, social media and digital setup for your business or event.',
+    description: 'Logos, websites, social media and online presence that match the real story of your project or business — simple, clear and easy for people to find.',
     imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
   },
   {
     id: 'events',
     title: 'Event Management',
-    description: 'Stage, sound, decor and coordination for launches, weddings and corporate events.',
+    description: 'From small gatherings to big functions, we take care of stage, sound, decor and flow so you and your guests can simply show up and enjoy.',
     imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80',
   },
   {
     id: 'entertainment',
     title: 'Entertainments',
-    description: 'Cultural programs, live performances and custom entertainment line-ups.',
+    description: 'Live performances, cultural programs and curated line-ups that add energy, emotion and fun to your event, without feeling chaotic.',
     imageUrl: 'https://images.unsplash.com/photo-1464375117522-1311dd6d0cd7?w=400&q=80',
   },
   {
     id: 'fnb',
     title: 'F&B Services',
-    description: 'Catering, food counters and curated menus for any size of gathering.',
+    description: 'Thoughtful menus, clean setup and friendly service for everything from intimate dinners to large gatherings.',
     imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80',
   },
 ]
@@ -59,7 +59,7 @@ export default function Services() {
             <SectionHeader
               label="SERVICES"
               title="Services under Abhi Synergies"
-              description="One company covering multiple verticals. Instead of coordinating with separate teams for construction, events, digital work and catering, you work with one trusted partner who understands how these pieces fit together."
+              description="One brand, many ways to help. Whether you are building a home, opening a business, planning a celebration or launching something new, Abhi Synergies connects the pieces — construction, planning, digital presence, events, entertainment and food — so everything feels like one smooth plan."
             />
           </div>
 
@@ -68,10 +68,10 @@ export default function Services() {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="group flex gap-4 p-5 rounded-lg border border-brandGray/10 hover:border-brandOrange/40 hover:shadow-md transition-all duration-300 bg-surface hover:-translate-y-1"
+                className="group flex gap-4 p-5 rounded-xl border border-brandGray/10 hover:border-brandOrange/40 hover:shadow-lg transition-all duration-200 bg-surface hover:-translate-y-1"
               >
                 {/* Image Thumbnail with border */}
-                <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border border-brandGray/10">
+                <div className="relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden border border-brandGray/10 shadow-md">
                   <Image
                     src={service.imageUrl}
                     alt={service.title}

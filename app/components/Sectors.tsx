@@ -41,14 +41,14 @@ export default function Sectors() {
         <SectionHeader
           label="SECTORS"
           title="Where our services fit best"
-          description="Real projects usually need more than one service. Here's how we combine our offerings for common scenarios."
+          description="Most real-life plans cross over many areas at once. A home needs interiors and sometimes a housewarming. A new restaurant needs branding and a launch event. Here's how Abhi Synergies fits into different moments."
         />
 
         <div className="space-y-8">
           {sectors.map((sector, index) => (
             <div
               key={index}
-              className="grid md:grid-cols-2 gap-0 items-center bg-surface rounded-lg overflow-hidden border border-brandGray/10 shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="grid md:grid-cols-2 gap-0 items-center bg-surface rounded-xl overflow-hidden border border-brandGray/10 shadow-md hover:shadow-lg transition-shadow duration-200 hover:-translate-y-1"
             >
               {/* Image with border */}
               <div className={`relative h-64 md:h-80 ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
@@ -56,7 +56,7 @@ export default function Sectors() {
                   src={sector.imageUrl}
                   alt={sector.title}
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-xl"
                 />
                 <div className="absolute inset-0 border-r border-brandGray/10"></div>
               </div>

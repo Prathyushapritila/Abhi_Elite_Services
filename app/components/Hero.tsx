@@ -11,10 +11,7 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative section-padding bg-gradient-to-br from-backgroundWarm via-white to-backgroundWarm overflow-hidden">
-      {/* Soft gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-transparent pointer-events-none"></div>
-      
+    <section id="home" className="relative section-padding bg-gradient-to-b from-headerCream to-white overflow-hidden">
       <div className="container-editorial relative z-10">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Side - Content */}
@@ -27,7 +24,7 @@ export default function Hero() {
             
             <div className="space-y-4 text-lg text-brandGray leading-relaxed max-w-xl">
               <p>
-                We plan and execute real-world projects – from buildings and business setups to events, branding and food services – so clients and partners rise together with one trusted team instead of five vendors.
+                Instead of calling a builder, an event planner, a designer and a caterer separately, you talk to one team that understands the whole picture. Abhi Synergies helps you plan and execute projects that feel organised, warm and memorable — from the first idea to the final celebration.
               </p>
             </div>
             
@@ -50,7 +47,7 @@ export default function Hero() {
           {/* Right Side - Offset Image Card */}
           <div className="relative hidden md:block">
             {/* Main image card with rounded corners and soft shadow */}
-            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-brandGray/10 shadow-2xl">
+            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-brandGray/10 shadow-lg">
               <Image
                 src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
                 alt="Construction project"

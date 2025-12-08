@@ -56,14 +56,14 @@ export default function Work() {
         <SectionHeader
           label="PROJECTS"
           title="A few ways we've helped clients"
-          description="Real projects that combined multiple services under one team."
+          description="Each project below combines more than one service. That's where Abhi Synergies feels most at home — in the spaces where construction, planning, digital work, events, entertainment and food all meet."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative h-80 rounded-xl overflow-hidden border border-brandGray/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group relative h-80 rounded-xl overflow-hidden border border-brandGray/10 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1"
             >
               {/* Background Image */}
               <Image
