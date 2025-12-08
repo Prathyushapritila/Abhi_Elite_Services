@@ -20,7 +20,7 @@ const services: Service[] = [
   {
     id: 'consultancy',
     title: 'Consultancy Services',
-    description: 'We sit with you, listen to your ideas, and help with planning, approvals, budgeting and choosing the right partners so your project doesn't feel overwhelming.',
+    description: "We sit with you, listen to your ideas, and help with planning, approvals, budgeting and choosing the right partners so your project doesn't feel overwhelming.",
     imageUrl: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80',
   },
   {
