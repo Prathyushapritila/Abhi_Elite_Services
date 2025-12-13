@@ -60,10 +60,18 @@ export default function Services() {
   return (
     <section 
       id="services" 
-      className="py-16 md:py-20"
-      style={{ backgroundColor: '#F3F4F6' }}
+      className="py-16 md:py-20 relative"
+      style={{
+        backgroundImage: 'url(/images/services-section-bg.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
+      {/* Soft white overlay for text readability */}
+      <div className="absolute inset-0 bg-white/65"></div>
+      
+      <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Column - Intro Text */}
           <div>

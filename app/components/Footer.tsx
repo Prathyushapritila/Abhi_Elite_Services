@@ -6,13 +6,16 @@ export default function Footer() {
     <footer 
       className="text-slate-200 py-10 md:py-14 relative"
       style={{
-        backgroundImage: 'url(/images/footer-bg-dark.svg)',
+        backgroundImage: 'url(/images/footer-section-bg.svg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
+      {/* Darker overlay for contrast */}
+      <div className="absolute inset-0 bg-black/20"></div>
+      
+      <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         {/* Top Section: Logo, Services, Address, and Social */}
         <div className="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-white/10">
           {/* Left: Combined Logo */}

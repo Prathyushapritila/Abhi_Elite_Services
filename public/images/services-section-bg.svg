@@ -1,0 +1,53 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Warm cream base -->
+    <linearGradient id="warmCreamBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFBF5;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFBF5;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Soft peach accent -->
+    <radialGradient id="peachAccent" cx="30%" cy="40%">
+      <stop offset="0%" style="stop-color:#FFF1E6;stop-opacity:0.12" />
+      <stop offset="70%" style="stop-color:#FFF1E6;stop-opacity:0.06" />
+      <stop offset="100%" style="stop-color:#FFF1E6;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Warm beige accent -->
+    <radialGradient id="beigeAccent" cx="70%" cy="60%">
+      <stop offset="0%" style="stop-color:#F5E6D3;stop-opacity:0.1" />
+      <stop offset="70%" style="stop-color:#F5E6D3;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#F5E6D3;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Gentle texture -->
+    <filter id="grainTexture">
+      <feTurbulence baseFrequency="0.9" numOctaves="2" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0.003 0 0.003 0 0.002"/>
+      </feComponentTransfer>
+      <feComposite operator="over" in="SourceGraphic" in2="noise"/>
+    </filter>
+    
+    <!-- Soft blur -->
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+  </defs>
+  
+  <!-- Base warm cream background -->
+  <rect width="1920" height="1080" fill="url(#warmCreamBase)"/>
+  
+  <!-- Subtle abstract shapes -->
+  <ellipse cx="576" cy="432" rx="400" ry="350" fill="url(#peachAccent)" filter="url(#softBlur)"/>
+  <ellipse cx="1344" cy="648" rx="380" ry="320" fill="url(#beigeAccent)" filter="url(#softBlur)"/>
+  
+  <!-- Gentle texture overlay -->
+  <rect width="1920" height="1080" fill="url(#warmCreamBase)" opacity="0.15" filter="url(#grainTexture)"/>
+  
+  <!-- Subtle overlay for depth -->
+  <rect width="1920" height="1080" fill="url(#warmCreamBase)" opacity="0.08"/>
+</svg>
+
