@@ -1,0 +1,60 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Main charcoal grey gradient -->
+    <radialGradient id="charcoalGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#2C2C2C;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#1F1F1F;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#2A2A2A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A1A1A;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Burnt orange glow accents -->
+    <radialGradient id="orangeGlow1" cx="20%" cy="30%">
+      <stop offset="0%" style="stop-color:#CC5500;stop-opacity:0.25" />
+      <stop offset="50%" style="stop-color:#CC5500;stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:#CC5500;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="orangeGlow2" cx="80%" cy="70%">
+      <stop offset="0%" style="stop-color:#CC5500;stop-opacity:0.2" />
+      <stop offset="50%" style="stop-color:#CC5500;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#CC5500;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="orangeGlow3" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#CC5500;stop-opacity:0.15" />
+      <stop offset="60%" style="stop-color:#CC5500;stop-opacity:0.08" />
+      <stop offset="100%" style="stop-color:#CC5500;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Subtle texture/noise filter -->
+    <filter id="grainTexture">
+      <feTurbulence baseFrequency="0.9" numOctaves="4" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0.015 0 0.015 0 0.01"/>
+      </feComponentTransfer>
+      <feComposite operator="over" in="SourceGraphic" in2="noise"/>
+    </filter>
+    
+    <!-- Soft blur for glow effects -->
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+  
+  <!-- Base charcoal grey background -->
+  <rect width="1920" height="1080" fill="url(#charcoalGradient)"/>
+  
+  <!-- Burnt orange glow accents (blended naturally) -->
+  <ellipse cx="384" cy="324" rx="500" ry="450" fill="url(#orangeGlow1)" filter="url(#softGlow)"/>
+  <ellipse cx="1536" cy="756" rx="450" ry="400" fill="url(#orangeGlow2)" filter="url(#softGlow)"/>
+  <ellipse cx="960" cy="540" rx="600" ry="550" fill="url(#orangeGlow3)" filter="url(#softGlow)"/>
+  
+  <!-- Subtle texture overlay -->
+  <rect width="1920" height="1080" fill="url(#charcoalGradient)" opacity="0.3" filter="url(#grainTexture)"/>
+  
+  <!-- Additional smooth gradient overlay for depth -->
+  <rect width="1920" height="1080" fill="url(#charcoalGradient)" opacity="0.2"/>
+</svg>
+
