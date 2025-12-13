@@ -34,7 +34,16 @@ const projects: Project[] = [
 
 export default function Work() {
   return (
-    <section id="work" className="py-16 md:py-20" style={{ backgroundColor: '#F3F4F6' }}>
+    <section 
+      id="work" 
+      className="py-16 md:py-20 relative"
+      style={{
+        backgroundImage: 'url(/images/projects-bg.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <SectionHeader
           label="PROJECTS"

@@ -1,0 +1,59 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Warm grey base -->
+    <linearGradient id="warmGreyBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F3F4F6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F5F5F7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F3F4F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Light warm yellow accent -->
+    <radialGradient id="warmYellow" cx="40%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFF7D1;stop-opacity:0.18" />
+      <stop offset="60%" style="stop-color:#FFF7D1;stop-opacity:0.09" />
+      <stop offset="100%" style="stop-color:#FFF7D1;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Soft warm grey accent -->
+    <radialGradient id="softGrey" cx="60%" cy="30%">
+      <stop offset="0%" style="stop-color:#F8F9FA;stop-opacity:0.15" />
+      <stop offset="60%" style="stop-color:#F8F9FA;stop-opacity:0.08" />
+      <stop offset="100%" style="stop-color:#F8F9FA;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Gentle fine-grain texture -->
+    <filter id="grainTexture">
+      <feTurbulence baseFrequency="0.85" numOctaves="2" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0.004 0 0.004 0 0.003"/>
+      </feComponentTransfer>
+      <feComposite operator="over" in="SourceGraphic" in2="noise"/>
+    </filter>
+    
+    <!-- Very soft blur for shapes -->
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="65"/>
+    </filter>
+  </defs>
+  
+  <!-- Base warm grey background -->
+  <rect width="1920" height="1080" fill="url(#warmGreyBase)"/>
+  
+  <!-- Very subtle geometric/curved abstract elements -->
+  <ellipse cx="768" cy="540" rx="450" ry="400" fill="url(#warmYellow)" filter="url(#softBlur)"/>
+  <ellipse cx="1152" cy="324" rx="420" ry="380" fill="url(#softGrey)" filter="url(#softBlur)"/>
+  
+  <!-- Subtle curved shape -->
+  <path d="M 0 500 Q 600 450 1200 500 Q 1800 550 1920 500 L 1920 0 L 0 0 Z" 
+        fill="url(#warmYellow)" 
+        opacity="0.05"
+        filter="url(#softBlur)"/>
+  
+  <!-- Gentle fine-grain texture overlay -->
+  <rect width="1920" height="1080" fill="url(#warmGreyBase)" opacity="0.18" filter="url(#grainTexture)"/>
+  
+  <!-- Subtle overlay for depth -->
+  <rect width="1920" height="1080" fill="url(#warmGreyBase)" opacity="0.06"/>
+</svg>
+
