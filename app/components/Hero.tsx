@@ -39,7 +39,7 @@ export default function Hero() {
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-8 py-4 border-2 border-ink text-ink font-semibold rounded-lg hover:bg-ink hover:text-white transition-all duration-200 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-[#EA6A1F] focus:ring-offset-2"
+                className="px-8 py-4 bg-[#EA580C] text-white font-semibold rounded-lg shadow-md hover:bg-[#c74905] transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-[#EA580C] focus:ring-offset-2"
               >
                 Talk to us
               </button>
