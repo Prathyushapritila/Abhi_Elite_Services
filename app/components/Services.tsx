@@ -74,8 +74,8 @@ export default function Services() {
         aria-hidden="true"
       ></div>
       
-      {/* Soft white overlay for text readability (65% opacity) */}
-      <div className="absolute inset-0 w-full h-full bg-white opacity-65" aria-hidden="true"></div>
+      {/* Soft white overlay for text readability (50% opacity) */}
+      <div className="absolute inset-0 w-full h-full bg-white opacity-50" aria-hidden="true"></div>
       
       {/* Content layer */}
       <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
