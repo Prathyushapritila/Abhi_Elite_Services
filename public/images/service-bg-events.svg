@@ -1,0 +1,61 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Warm amber base -->
+    <linearGradient id="amberBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8F0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFFBF5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFF8F0;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Champagne accent -->
+    <radialGradient id="champagneAccent" cx="35%" cy="45%">
+      <stop offset="0%" style="stop-color:#F5E6D3;stop-opacity:0.15" />
+      <stop offset="70%" style="stop-color:#F5E6D3;stop-opacity:0.08" />
+      <stop offset="100%" style="stop-color:#F5E6D3;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Beige accent -->
+    <radialGradient id="beigeAccent" cx="65%" cy="55%">
+      <stop offset="0%" style="stop-color:#F9F5F0;stop-opacity:0.12" />
+      <stop offset="70%" style="stop-color:#F9F5F0;stop-opacity:0.06" />
+      <stop offset="100%" style="stop-color:#F9F5F0;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Gentle texture -->
+    <filter id="grainTexture">
+      <feTurbulence baseFrequency="0.9" numOctaves="2" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0.003 0 0.003"/>
+      </feComponentTransfer>
+      <feComposite operator="over" in="SourceGraphic" in2="noise"/>
+    </filter>
+    
+    <!-- Soft blur -->
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+  
+  <!-- Base warm amber background -->
+  <rect width="1280" height="720" fill="url(#amberBase)"/>
+  
+  <!-- Faint bokeh lights -->
+  <circle cx="300" cy="250" r="40" fill="url(#champagneAccent)" opacity="0.2" filter="url(#softBlur)"/>
+  <circle cx="500" cy="200" r="35" fill="url(#champagneAccent)" opacity="0.18" filter="url(#softBlur)"/>
+  <circle cx="700" cy="280" r="38" fill="url(#champagneAccent)" opacity="0.2" filter="url(#softBlur)"/>
+  <circle cx="900" cy="220" r="32" fill="url(#champagneAccent)" opacity="0.18" filter="url(#softBlur)"/>
+  
+  <!-- Subtle stage lighting beams -->
+  <path d="M 400 150 L 450 400" stroke="url(#beigeAccent)" stroke-width="3" opacity="0.15" stroke-linecap="round" filter="url(#softBlur)"/>
+  <path d="M 600 150 L 650 400" stroke="url(#beigeAccent)" stroke-width="3" opacity="0.15" stroke-linecap="round" filter="url(#softBlur)"/>
+  <path d="M 800 150 L 850 400" stroke="url(#beigeAccent)" stroke-width="3" opacity="0.15" stroke-linecap="round" filter="url(#softBlur)"/>
+  
+  <!-- Accent gradients -->
+  <ellipse cx="500" cy="360" rx="250" ry="220" fill="url(#champagneAccent)" filter="url(#softBlur)"/>
+  <ellipse cx="900" cy="360" rx="220" ry="200" fill="url(#beigeAccent)" filter="url(#softBlur)"/>
+  
+  <!-- Gentle texture overlay -->
+  <rect width="1280" height="720" fill="url(#amberBase)" opacity="0.12" filter="url(#grainTexture)"/>
+</svg>
+

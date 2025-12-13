@@ -1,0 +1,68 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Warm neutral base -->
+    <linearGradient id="neutralBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFAFA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FCFCFC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FAFAFA;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Light grey accent -->
+    <radialGradient id="greyAccent" cx="40%" cy="50%">
+      <stop offset="0%" style="stop-color:#F0F0F0;stop-opacity:0.12" />
+      <stop offset="70%" style="stop-color:#F0F0F0;stop-opacity:0.06" />
+      <stop offset="100%" style="stop-color:#F0F0F0;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Subtle orange glow -->
+    <radialGradient id="orangeGlow" cx="60%" cy="40%">
+      <stop offset="0%" style="stop-color:#FFB88A;stop-opacity:0.08" />
+      <stop offset="70%" style="stop-color:#FFB88A;stop-opacity:0.04" />
+      <stop offset="100%" style="stop-color:#FFB88A;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Gentle texture -->
+    <filter id="grainTexture">
+      <feTurbulence baseFrequency="0.9" numOctaves="2" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0.003 0 0.003"/>
+      </feComponentTransfer>
+      <feComposite operator="over" in="SourceGraphic" in2="noise"/>
+    </filter>
+    
+    <!-- Soft blur -->
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  
+  <!-- Base warm neutral background -->
+  <rect width="1280" height="720" fill="url(#neutralBase)"/>
+  
+  <!-- Faint UI screen shapes -->
+  <rect x="200" y="200" width="180" height="120" rx="8" fill="url(#greyAccent)" opacity="0.15" filter="url(#softBlur)"/>
+  <rect x="210" y="210" width="160" height="100" rx="4" fill="url(#greyAccent)" opacity="0.1"/>
+  <rect x="220" y="230" width="60" height="30" rx="2" fill="url(#greyAccent)" opacity="0.12"/>
+  <rect x="290" y="230" width="60" height="30" rx="2" fill="url(#greyAccent)" opacity="0.12"/>
+  
+  <!-- Dotted pattern -->
+  <circle cx="600" cy="300" r="2" fill="url(#greyAccent)" opacity="0.15"/>
+  <circle cx="630" cy="300" r="2" fill="url(#greyAccent)" opacity="0.15"/>
+  <circle cx="660" cy="300" r="2" fill="url(#greyAccent)" opacity="0.15"/>
+  <circle cx="600" cy="330" r="2" fill="url(#greyAccent)" opacity="0.15"/>
+  <circle cx="630" cy="330" r="2" fill="url(#greyAccent)" opacity="0.15"/>
+  <circle cx="660" cy="330" r="2" fill="url(#greyAccent)" opacity="0.15"/>
+  
+  <!-- Soft geometric shapes -->
+  <rect x="800" y="250" width="80" height="80" rx="6" transform="rotate(45 840 290)" fill="url(#orangeGlow)" opacity="0.12" filter="url(#softBlur)"/>
+  <circle cx="950" cy="350" r="30" fill="url(#orangeGlow)" opacity="0.1" filter="url(#softBlur)"/>
+  
+  <!-- Accent gradients -->
+  <ellipse cx="500" cy="360" rx="200" ry="180" fill="url(#greyAccent)" filter="url(#softBlur)"/>
+  <ellipse cx="900" cy="360" rx="180" ry="160" fill="url(#orangeGlow)" filter="url(#softBlur)"/>
+  
+  <!-- Gentle texture overlay -->
+  <rect width="1280" height="720" fill="url(#neutralBase)" opacity="0.1" filter="url(#grainTexture)"/>
+</svg>
+
