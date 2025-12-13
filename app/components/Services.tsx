@@ -60,17 +60,24 @@ export default function Services() {
   return (
     <section 
       id="services" 
-      className="py-16 md:py-20 relative"
-      style={{
-        backgroundImage: 'url(/images/services-section-bg.svg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
+      className="py-16 md:py-20 relative overflow-hidden"
     >
-      {/* Soft white overlay for text readability */}
-      <div className="absolute inset-0 bg-white/65"></div>
+      {/* Section background layer */}
+      <div 
+        className="absolute inset-0 w-full h-full"
+        style={{
+          backgroundImage: 'url(/images/services-section-bg.svg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+        aria-hidden="true"
+      ></div>
       
+      {/* Soft white overlay for text readability (65% opacity) */}
+      <div className="absolute inset-0 w-full h-full bg-white opacity-65" aria-hidden="true"></div>
+      
+      {/* Content layer */}
       <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Column - Intro Text */}
