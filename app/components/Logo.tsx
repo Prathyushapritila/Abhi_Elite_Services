@@ -6,25 +6,25 @@ interface LogoProps {
 }
 
 export default function Logo({ variant = 'header', className = '' }: LogoProps) {
-  // Size configurations for each variant
-  // header: 40-52px mobile, 56-72px desktop
-  // footer: 48-64px
+  // Exact size configurations as specified
+  // header: Mobile 56px (h-14), Desktop 80px (h-20)
+  // footer: Mobile 56px (h-14), Desktop 72px (h-[72px])
   // contact: 80-120px
   const sizeClasses = {
-    header: 'h-10 sm:h-12 md:h-14 lg:h-[72px] w-auto max-w-none',
-    footer: 'h-12 md:h-16 w-auto max-w-none',
-    contact: 'h-20 md:h-24 lg:h-[120px] w-auto max-w-none',
+    header: 'h-14 md:h-20 w-auto object-contain',
+    footer: 'h-14 md:h-[72px] w-auto object-contain',
+    contact: 'h-20 md:h-24 lg:h-[120px] w-auto object-contain',
   }
 
   return (
-    <div className={`relative flex-shrink-0 ${sizeClasses[variant]} ${className}`} style={{ overflow: 'visible' }}>
+    <div className={`relative flex-shrink-0 ${className}`} style={{ overflow: 'visible' }}>
       <Image
         src="/AbhiPng-5-mainLogo.png"
         alt="Abhi Synergies"
-        width={variant === 'contact' ? 300 : variant === 'footer' ? 250 : 220}
-        height={variant === 'contact' ? 112 : variant === 'footer' ? 64 : 72}
-        className="object-contain w-full h-full"
-        style={{ objectFit: 'contain', filter: 'none', opacity: 1 }}
+        width={variant === 'contact' ? 300 : variant === 'footer' ? 280 : 320}
+        height={variant === 'contact' ? 120 : variant === 'footer' ? 72 : 80}
+        className={sizeClasses[variant]}
+        style={{ filter: 'none', opacity: 1 }}
         priority={variant === 'header'}
       />
     </div>

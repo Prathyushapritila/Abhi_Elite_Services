@@ -45,7 +45,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <nav className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-20 md:h-24 lg:h-28">
+        <div className="flex items-center justify-between min-h-[88px] md:min-h-[110px] py-2">
           {/* Logo Block */}
           <Link 
             href="#home" 
