@@ -22,12 +22,13 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-4">
               {/* ABHI Logo Image */}
-              <div className="relative w-32 h-12 flex-shrink-0">
+              <div className="relative w-40 h-16 md:w-48 md:h-20 flex-shrink-0 bg-white/10 rounded-lg p-2">
                 <Image
                   src="/Logo_ABHI.jpeg"
                   alt="Abhi Synergies"
                   fill
                   className="object-contain"
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
             </div>
@@ -36,15 +37,30 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Middle: Address */}
+          {/* Middle: Address & Contact */}
           <div>
             <p className="font-semibold mb-3 text-sm text-white">Address</p>
-            <div className="text-sm text-slate-300 leading-relaxed space-y-1">
+            <div className="text-sm text-slate-300 leading-relaxed space-y-1 mb-6">
               <p>Block: AG8</p>
               <p>Mathrus Apartment</p>
               <p>Opp: Zudio showroom Hyderguda-Basheerbagh Road</p>
               <p>Hyderguda</p>
               <p>Hyderabad, Telangana 500029</p>
+            </div>
+            <p className="font-semibold mb-3 text-sm text-white">Contact</p>
+            <div className="text-sm text-slate-300 leading-relaxed space-y-1">
+              <a 
+                href="tel:+919666155296" 
+                className="block hover:text-[#EA6A1F] transition-colors"
+              >
+                +91 96661 55296
+              </a>
+              <a 
+                href="mailto:abhignainnovations@gmail.com" 
+                className="block hover:text-[#EA6A1F] transition-colors"
+              >
+                abhignainnovations@gmail.com
+              </a>
             </div>
           </div>
 

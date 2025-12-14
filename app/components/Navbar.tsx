@@ -54,13 +54,14 @@ export default function Navbar() {
             aria-label="Abhi Synergies Home"
           >
             {/* ABHI Logo Image */}
-            <div className="relative w-32 h-14 md:w-40 md:h-16 flex-shrink-0">
+            <div className="relative w-40 h-16 md:w-48 md:h-20 flex-shrink-0">
               <Image
                 src="/Logo_ABHI.jpeg"
                 alt="Abhi Synergies"
                 fill
                 className="object-contain"
                 priority
+                style={{ objectFit: 'contain' }}
               />
             </div>
           </Link>
