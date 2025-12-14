@@ -46,31 +46,22 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <nav className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20 md:h-24">
-          {/* Combined Logo Block */}
+          {/* Logo Block */}
           <Link 
             href="#home" 
-            className="flex items-center gap-3"
+            className="flex items-center"
             onClick={() => handleNavClick('home')}
             aria-label="Abhi Synergies Home"
           >
             {/* ABHI Logo Image */}
-            <div className="relative w-14 h-14 md:w-16 md:h-16 flex-shrink-0">
+            <div className="relative w-32 h-14 md:w-40 md:h-16 flex-shrink-0">
               <Image
-                src="/abhi-logo.png"
-                alt="Abhi"
+                src="/Logo_ABHI.jpeg"
+                alt="Abhi Synergies"
                 fill
                 className="object-contain"
                 priority
               />
-            </div>
-            {/* Synergies text + tagline */}
-            <div className="flex flex-col">
-              <div className="text-xl md:text-2xl font-semibold text-[#EA6A1F] leading-tight">
-                Synergies
-              </div>
-              <div className="text-xs md:text-sm text-slate-500 tracking-[0.2em] uppercase mt-0.5">
-                Rise Together
-              </div>
             </div>
           </Link>
 
