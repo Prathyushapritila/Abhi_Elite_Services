@@ -53,7 +53,7 @@ export default function Navbar() {
             aria-label="Abhi Synergies Home"
           >
             <img
-              src="/abhi-logo.png"
+              src="/AbhiPng-12.png"
               alt="Abhi Synergies"
               className="h-16 md:h-20 w-auto object-contain flex-shrink-0"
             />
