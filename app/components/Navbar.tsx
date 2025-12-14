@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Logo from './Logo'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -45,7 +44,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <nav className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between min-h-[88px] md:min-h-[110px] py-2">
+        <div className="flex items-center justify-between min-h-[96px] md:min-h-[120px]">
           {/* Logo Block */}
           <Link 
             href="#home" 
@@ -53,7 +52,11 @@ export default function Navbar() {
             onClick={() => handleNavClick('home')}
             aria-label="Abhi Synergies Home"
           >
-            <Logo variant="header" />
+            <img
+              src="/abhi-logo-header.png"
+              alt="Abhi Synergies"
+              className="h-16 md:h-20 w-auto object-contain flex-shrink-0"
+            />
           </Link>
 
           {/* Desktop Navigation */}
