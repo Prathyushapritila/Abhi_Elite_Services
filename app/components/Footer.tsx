@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import Logo from './Logo'
 
 export default function Footer() {
   return (
@@ -21,16 +21,7 @@ export default function Footer() {
           {/* Left: Logo */}
           <div>
             <div className="flex items-center mb-4">
-              {/* ABHI Logo Image */}
-              <div className="relative h-16 md:h-24 flex-shrink-0" style={{ width: 'auto', minWidth: '200px', maxWidth: '320px' }}>
-                <Image
-                  src="/AbhiPng-5-mainLogo.png"
-                  alt="Abhi Synergies"
-                  fill
-                  className="object-contain"
-                  style={{ objectFit: 'contain', filter: 'none', opacity: 1 }}
-                />
-              </div>
+              <Logo variant="footer" />
             </div>
             <p className="text-sm text-slate-300 mt-4">
               Construction · Consultancy · Digital · Events · Entertainments · F&B

@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from 'react'
 import SectionHeader from './SectionHeader'
-import Image from 'next/image'
+import Logo from './Logo'
 
 interface FormData {
   name: string
@@ -148,15 +148,7 @@ export default function Contact() {
             {/* Founder Card */}
             <div className="bg-[#FFF8F0] border border-slate-200 rounded-2xl p-6 shadow-sm">
               <div className="flex items-start gap-4">
-                <div className="relative w-40 h-40 md:w-48 md:h-48 flex-shrink-0">
-                  <Image
-                    src="/AbhiPng-5-mainLogo.png"
-                    alt="Abhi Synergies"
-                    fill
-                    className="object-contain"
-                    style={{ objectFit: 'contain', filter: 'none', opacity: 1 }}
-                  />
-                </div>
+                <Logo variant="contact" />
                 <div className="flex-1">
                   <div className="text-xs uppercase tracking-wide text-muted mb-1">Founder</div>
                   <h3 className="font-serif text-xl font-semibold text-ink mb-2">Srikanth Pritila</h3>
