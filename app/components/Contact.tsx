@@ -147,8 +147,8 @@ export default function Contact() {
           <div className="space-y-6">
             {/* Founder Card */}
             <div className="bg-[#FFF8F0] border border-slate-200 rounded-2xl p-6 shadow-sm">
-              <div className="flex items-start gap-4">
-                <Logo variant="contact" />
+              <Logo variant="contact" />
+              <div className="flex items-start gap-4 mt-4">
                 <div className="flex-1">
                   <div className="text-xs uppercase tracking-wide text-muted mb-1">Founder</div>
                   <h3 className="font-serif text-xl font-semibold text-ink mb-2">Srikanth Pritila</h3>

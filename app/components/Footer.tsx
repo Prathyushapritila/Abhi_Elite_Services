@@ -20,9 +20,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-white/10">
           {/* Left: Logo */}
           <div>
-            <div className="flex items-center mb-4">
-              <Logo variant="footer" />
-            </div>
+            <Logo variant="footer" />
             <p className="text-sm text-slate-300 mt-4">
               Construction · Consultancy · Digital · Events · Entertainments · F&B
             </p>
