@@ -44,12 +44,12 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/85 border-b border-slate-200 shadow-sm">
-      <nav className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="min-h-[96px] md:min-h-[120px] flex items-center justify-between gap-4">
+      <nav className="max-w-6xl mx-auto px-4 md:px-6">
+        <div className="min-h-[96px] md:min-h-[120px] flex items-center justify-between">
           {/* Logo Block */}
           <Link 
             href="#home" 
-            className="flex items-center flex-shrink-0"
+            className="flex items-center"
             onClick={() => handleNavClick('home')}
             aria-label="Abhi Synergies Home"
           >
@@ -57,13 +57,13 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center flex-nowrap space-x-5 lg:space-x-6">
+          <div className="hidden md:flex items-center space-x-8 lg:space-x-10">
             {navLinks.map((link) => (
               <Link
                 key={link.id}
                 href={link.href}
                 onClick={() => handleNavClick(link.id)}
-                className={`relative whitespace-nowrap text-sm md:text-base text-slate-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 rounded px-2 py-1 ${
+                className={`relative text-sm md:text-base text-slate-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 rounded px-2 py-1 ${
                   activeSection === link.id
                     ? 'text-[#EA6A1F]'
                     : 'hover:text-[#EA6A1F]'
