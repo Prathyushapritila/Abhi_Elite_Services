@@ -51,3 +51,34 @@
     }
   }
 }
+
+/* Watermark background */
+.watermark-container {
+  position: relative;
+}
+
+.watermark-container::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/abhi-logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 55%;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.watermark-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Desktop: smaller watermark size */
+@media (min-width: 768px) {
+  .watermark-container::before {
+    background-size: 35%;
+    opacity: 0.05;
+  }
+}
