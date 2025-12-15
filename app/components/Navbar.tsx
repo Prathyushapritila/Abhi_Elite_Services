@@ -49,7 +49,7 @@ export default function Navbar() {
           {/* Logo Block */}
           <Link 
             href="#home" 
-            className="flex items-center"
+            className="flex items-center pr-8 md:pr-12"
             onClick={() => handleNavClick('home')}
             aria-label="Abhi Synergies Home"
           >
@@ -57,7 +57,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center flex-nowrap whitespace-nowrap gap-4 md:gap-6 lg:gap-8 ml-auto">
+          <div className="hidden md:flex items-center flex-nowrap whitespace-nowrap gap-6 md:gap-8 ml-auto pl-8">
             {navLinks.map((link) => (
               <Link
                 key={link.id}
