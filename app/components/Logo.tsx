@@ -9,8 +9,8 @@ export default function Logo({ variant = 'header', className = '' }: LogoProps) 
   // Responsive sizing: Header ~56-72px desktop, ~44-52px mobile
   // Footer: slightly smaller but readable
   const sizeClasses = {
-    header: 'h-12 md:h-18 w-auto object-contain flex-shrink-0',
-    footer: 'h-12 md:h-16 w-auto object-contain flex-shrink-0',
+    header: 'h-11 md:h-18 w-auto object-contain flex-shrink-0',
+    footer: 'h-11 md:h-16 w-auto object-contain flex-shrink-0',
     contact: 'h-16 md:h-20 lg:h-24 w-auto object-contain flex-shrink-0',
   }
 
