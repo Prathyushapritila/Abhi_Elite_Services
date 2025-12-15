@@ -11,7 +11,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'End-to-end construction, from ground breaking to housewarming',
+    title: 'Construction services from foundation to housewarming',
     description: 'End-to-end support covering construction coordination, interiors, housewarming planning and complete food setup.',
     imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
   },
