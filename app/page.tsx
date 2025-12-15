@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 
 export default function Home() {
   return (
-    <main className="watermark-container">
+    <main>
       <Navbar />
       <Hero />
       <Services />
