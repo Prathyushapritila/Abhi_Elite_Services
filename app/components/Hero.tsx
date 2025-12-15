@@ -24,8 +24,8 @@ export default function Hero() {
             </div>
             {/* Main heading */}
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-ink leading-tight tracking-tight">
-              <span className="text-blue-900 font-copperplate-gothic hero-tagline-tight">
-                All your construction, event and F&B needs in one place.
+              <span className="text-slate-300 font-sans">
+                ALL YOUR CONSTRUCTION, EVENT AND F&B NEEDS IN ONE PLACE.
               </span>
             </h1>
             
