@@ -57,7 +57,7 @@ export default function Hero() {
           <div className="relative hidden md:block">
             <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=90"
+                src="/WhatsApp Image 2025-12-15 at 12.01.22 PM.jpeg"
                 alt="Premium multi-service hero: construction, events, digital services, consultancy, entertainment, and F&B"
                 fill
                 className="object-cover"
