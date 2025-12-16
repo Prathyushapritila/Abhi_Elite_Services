@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
-import WatermarkLayer from './components/WatermarkLayer'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -28,7 +27,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="relative font-sans antialiased text-ink">
-        <WatermarkLayer />
         <div className="relative z-10">
           {children}
         </div>

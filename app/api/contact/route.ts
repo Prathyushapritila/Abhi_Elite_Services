@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Email configuration
-    const recipientEmail = 'abhignainnovations@gmail.com'
+    const recipientEmail = 'abhisynergies@gmail.com'
     const subject = `New Contact Form Submission from ${name}`
     
     // Format email body as HTML
