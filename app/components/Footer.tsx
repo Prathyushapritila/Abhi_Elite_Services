@@ -28,7 +28,7 @@ export default function Footer() {
 
           {/* Middle: Address */}
           <div>
-            <p className="font-semibold mb-3 text-sm text-white">Address</p>
+            <p className="font-bold mb-3 text-sm text-white underline">Address:</p>
             <div className="text-sm text-slate-300 leading-relaxed space-y-1">
               <p>Matrusree Apartments</p>
               <p>Opposite: Zudio showroom</p>

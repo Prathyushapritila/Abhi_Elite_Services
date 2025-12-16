@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import SectionHeader from './SectionHeader'
 
 interface Service {
   id: string
@@ -64,48 +63,50 @@ export default function Services() {
     >
       {/* Content layer */}
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-          {/* Left Column - Intro Text */}
-          <div>
-            <SectionHeader
-              label="SERVICES"
-              title="Services from Abhi Synergies"
-              description="These are the main services we provide. You can choose just one, or combine many based on your need."
-            />
+        {/* Centered Header */}
+        <div className="flex flex-col items-center mb-12 text-center">
+          <div className="inline-flex items-center bg-[#EA6A1F]/10 text-[#EA6A1F] uppercase text-[11px] tracking-[0.25em] px-3 py-1 rounded-full mb-3">
+            SERVICES
           </div>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-ink mb-4 leading-tight max-w-2xl">
+            <span className="text-blue-900">Services from Abhi Synergies</span>
+          </h2>
+          <p className="text-base md:text-lg text-muted leading-relaxed max-w-2xl">
+            These are the main services we provide. You can choose just one, or combine many based on your need.
+          </p>
+        </div>
 
-          {/* Right Column - Services Grid */}
-          <div className="grid grid-cols-1 gap-6">
-            {services.map((service) => (
-              <div
-                key={service.id}
-                className="group flex gap-4 p-5 rounded-2xl bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200 relative overflow-hidden"
-              >
-                {/* Content wrapper */}
-                <div className="relative z-10 flex gap-4 w-full">
-                  {/* Image Thumbnail */}
-                  <div className="relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden shadow-md">
-                    <Image
-                      src={service.imageUrl}
-                      alt={service.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="font-serif text-lg font-semibold text-ink mb-1.5 group-hover:text-[#EA6A1F] transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-muted leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
+        {/* Services Grid - 1 column mobile, 2 columns desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="group flex gap-4 p-5 rounded-2xl bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200 relative overflow-hidden h-full"
+            >
+              {/* Content wrapper */}
+              <div className="relative z-10 flex gap-4 w-full">
+                {/* Image Thumbnail */}
+                <div className="relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden shadow-md">
+                  <Image
+                    src={service.imageUrl}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                
+                {/* Content */}
+                <div className="flex-1">
+                  <h3 className="font-serif text-lg font-semibold text-ink mb-1.5 group-hover:text-[#EA6A1F] transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

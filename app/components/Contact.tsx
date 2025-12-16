@@ -166,7 +166,7 @@ export default function Contact() {
 
             {/* Address Card */}
             <div className="bg-[#FFF8F0] border border-slate-200 rounded-2xl p-6 shadow-sm">
-              <h4 className="font-semibold text-ink mb-4">Address</h4>
+              <h4 className="font-bold text-ink mb-4 underline">Address:</h4>
               <div className="text-sm text-muted leading-relaxed space-y-1">
                 <p>Matrusree Apartments</p>
                 <p>Opposite: Zudio showroom</p>
