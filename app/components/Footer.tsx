@@ -83,9 +83,8 @@ export default function Footer() {
               </a>
               
               {/* WhatsApp - Green Icon */}
-              {/* TODO: Add WhatsApp link when available */}
               <a
-                href="#"
+                href="https://wa.me/919666155296"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contact us on WhatsApp"

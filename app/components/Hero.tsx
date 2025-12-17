@@ -17,19 +17,19 @@ export default function Hero() {
       className="relative py-14 md:py-16 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Side - Content */}
+        <div className="grid md:grid-cols-[58%_42%] lg:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center">
+          {/* Left Side - Content (wider column) */}
           <div className="space-y-6 animate-fade-in relative z-20">
             <div className="inline-flex items-center bg-[#EA6A1F]/10 text-[#EA6A1F] uppercase text-[11px] tracking-[0.25em] px-3 py-1 rounded-full">
               Multi-service team
             </div>
             {/* Main heading - Exactly 2 lines */}
-            <h1 className="font-sans text-3xl sm:text-4xl md:text-3xl lg:text-4xl font-semibold text-ink leading-tight tracking-tight">
+            <h1 className="font-sans text-3xl sm:text-4xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold text-ink leading-tight tracking-tight">
               <span className="text-blue-900 block">
                 {/* Line 1: One Partner. One Vision. */}
                 <span className="block">One Partner. One Vision.</span>
-                {/* Line 2: One Team. Complete Execution. */}
-                <span className="block">One Team. Complete Execution.</span>
+                {/* Line 2: One Team. Complete Execution. - Must stay on one line */}
+                <span className="block whitespace-nowrap">One Team. Complete Execution.</span>
               </span>
             </h1>
             
@@ -55,8 +55,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Side - Image */}
-          <div className="relative w-full mt-8 md:mt-0 z-10">
+          {/* Right Side - Image (narrower column) */}
+          <div className="relative w-full mt-8 md:mt-0 z-10 md:pl-4">
             <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xl bg-slate-100">
               <Image
                 src="/hero-image.jpeg"
