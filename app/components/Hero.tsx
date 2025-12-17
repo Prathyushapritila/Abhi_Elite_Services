@@ -14,12 +14,12 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative py-14 md:py-16 overflow-hidden"
+      className="relative py-14 md:py-16 overflow-x-hidden"
     >
       <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         <div className="grid md:grid-cols-[55%_45%] lg:grid-cols-[55%_45%] gap-8 lg:gap-12 items-center">
           {/* Left Side - Content (wider column) */}
-          <div className="space-y-6 animate-fade-in relative z-20">
+          <div className="space-y-6 animate-fade-in relative z-20 min-w-0">
             <div className="inline-flex items-center bg-[#EA6A1F]/10 text-[#EA6A1F] uppercase text-[11px] tracking-[0.25em] px-3 py-1 rounded-full">
               Multi-service team
             </div>
@@ -29,7 +29,7 @@ export default function Hero() {
                 {/* Line 1: One Partner. One Vision. */}
                 <span className="block">One Partner. One Vision.</span>
                 {/* Line 2: One Team. Complete Execution. - Must stay on one line */}
-                <span className="block whitespace-nowrap">One Team. Complete Execution.</span>
+                <span className="block whitespace-normal sm:whitespace-nowrap">One Team. Complete Execution.</span>
               </span>
             </h1>
             
