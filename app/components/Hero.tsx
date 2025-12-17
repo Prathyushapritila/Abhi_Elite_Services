@@ -57,7 +57,7 @@ export default function Hero() {
 
           {/* Right Side - Image (larger column) */}
           <div className="relative w-full mt-8 md:mt-0 z-10">
-            <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xl bg-slate-100 scale-105">
+            <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xl bg-slate-100">
               <Image
                 src="/hero-image.jpeg"
                 alt="Premium multi-service hero: construction, events, digital services, consultancy, entertainment, and F&B"
