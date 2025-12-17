@@ -24,13 +24,17 @@ export default function Hero() {
               Multi-service team
             </div>
             {/* Main heading */}
-            <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl font-semibold text-ink leading-tight tracking-tight">
+            <h1 className="font-sans text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold text-ink leading-tight tracking-tight">
               <span className="text-blue-900">
-                <span className="block md:hidden">One Partner.</span>
-                <span className="block md:hidden">One Vision.</span>
-                <span className="block md:hidden">One Team.</span>
-                <span className="block md:hidden">Complete Execution.</span>
-                <span className="hidden md:inline">One Partner. One Vision. One Team. Complete Execution.</span>
+                {/* Mobile: Stacked version - one sentence per line */}
+                <span className="block md:hidden">
+                  <span className="block">One Partner.</span>
+                  <span className="block">One Vision.</span>
+                  <span className="block">One Team.</span>
+                  <span className="block">Complete Execution.</span>
+                </span>
+                {/* Desktop: Single line with whitespace-nowrap */}
+                <span className="hidden md:inline whitespace-nowrap">One Partner. One Vision. One Team. Complete Execution.</span>
               </span>
             </h1>
             
