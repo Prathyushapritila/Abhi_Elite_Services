@@ -26,9 +26,11 @@ export default function Hero() {
             {/* Main heading */}
             <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl font-semibold text-ink leading-tight tracking-tight">
               <span className="text-blue-900">
-                One Partner. One Vision. One Team.
-                <br />
-                Complete Execution.
+                <span className="block md:hidden">One Partner.</span>
+                <span className="block md:hidden">One Vision.</span>
+                <span className="block md:hidden">One Team.</span>
+                <span className="block md:hidden">Complete Execution.</span>
+                <span className="hidden md:inline">One Partner. One Vision. One Team. Complete Execution.</span>
               </span>
             </h1>
             
@@ -62,11 +64,12 @@ export default function Hero() {
                 alt="Premium multi-service hero: construction, events, digital services, consultancy, entertainment, and F&B"
                 fill
                 className="object-cover object-center"
+                style={{
+                  filter: 'brightness(1.1) contrast(1.15) saturate(1.2)',
+                }}
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              {/* Subtle overlay - left side clean for text, right side maintains visual weight */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent"></div>
             </div>
           </div>
         </div>

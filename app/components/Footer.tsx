@@ -31,7 +31,7 @@ export default function Footer() {
             <p className="font-bold mb-3 text-sm text-white underline">Address:</p>
             <div className="text-sm text-slate-300 leading-relaxed space-y-1">
               <p>Matrusree Apartments</p>
-              <p>Opposite: Zudio showroom</p>
+              <p>Opposite: Zudio Showroom</p>
               <p>Hyderguda, Basheerbagh</p>
               <p>Telangana 500029</p>
             </div>
