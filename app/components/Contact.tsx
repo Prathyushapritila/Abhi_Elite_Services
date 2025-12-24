@@ -173,11 +173,25 @@ export default function Contact() {
             {/* Address Card */}
             <div className="bg-[#FFF8F0] border border-slate-200 rounded-2xl p-6 shadow-sm">
               <h4 className="font-bold text-ink mb-4 underline">Address:</h4>
-              <div className="text-sm text-muted leading-relaxed space-y-1">
+              <div className="text-sm text-muted leading-relaxed space-y-1 mb-4">
                 <p>Matrusree Apartments</p>
                 <p>Opposite: Zudio Showroom</p>
                 <p>Hyderguda, Basheerbagh</p>
                 <p>Telangana 500029</p>
+              </div>
+              {/* Google Map */}
+              <div className="mt-4 rounded-lg overflow-hidden shadow-sm">
+                <iframe
+                  src="https://www.google.com/maps?q=Matrusree+Apartments,+Opposite+Zudio+Showroom,+Hyderguda,+Basheerbagh,+Telangana+500029&output=embed"
+                  width="100%"
+                  height="250"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                  title="Abhi Synergies Location"
+                ></iframe>
               </div>
             </div>
           </div>

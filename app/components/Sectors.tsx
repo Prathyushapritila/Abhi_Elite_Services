@@ -34,7 +34,7 @@ export default function Sectors() {
         <SectionHeader
           label="WHO WE HELP"
           title="Who usually works with Abhi Synergies?"
-          description="Most of our clients are people who don't want to deal with 4–5 different vendors. They want one team that can see the full picture."
+          description="Most of our clients are people who don't want to deal with multiple vendors. They want one team that can see the full picture."
         />
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">

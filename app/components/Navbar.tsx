@@ -43,8 +43,18 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-white/85 border-b border-slate-200 shadow-sm">
-      <nav className="max-w-6xl mx-auto px-4 md:px-6">
+    <header 
+      className="sticky top-0 z-50 text-slate-200 border-b border-white/10 shadow-sm relative"
+      style={{
+        backgroundImage: 'url(/images/footer-section-bg.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* Darker overlay for contrast */}
+      <div className="absolute inset-0 bg-black/20"></div>
+      <nav className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         <div className="min-h-[96px] md:min-h-[120px] flex items-center justify-between">
           {/* Logo Block */}
           <Link 
@@ -63,7 +73,7 @@ export default function Navbar() {
                 key={link.id}
                 href={link.href}
                 onClick={() => handleNavClick(link.id)}
-                className={`relative whitespace-nowrap text-sm md:text-base text-slate-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 rounded px-2 py-1 ${
+                className={`relative whitespace-nowrap text-sm md:text-base text-slate-200 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 rounded px-2 py-1 ${
                   activeSection === link.id
                     ? 'text-[#EA6A1F]'
                     : 'hover:text-[#EA6A1F]'
@@ -80,7 +90,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-slate-800 hover:text-[#EA6A1F] focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+            className="md:hidden p-2 rounded-md text-slate-200 hover:text-[#EA6A1F] focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
@@ -104,7 +114,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden pb-6 border-t border-slate-200 mt-2">
+          <div className="md:hidden pb-6 border-t border-white/10 mt-2">
             <div className="flex flex-col space-y-2 pt-4">
               {navLinks.map((link) => (
                 <Link
@@ -114,7 +124,7 @@ export default function Navbar() {
                   className={`px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 ${
                     activeSection === link.id
                       ? 'text-[#EA6A1F] bg-[#EA6A1F]/10'
-                      : 'text-slate-800 hover:text-[#EA6A1F] hover:bg-slate-50'
+                      : 'text-slate-200 hover:text-[#EA6A1F] hover:bg-white/10'
                   }`}
                 >
                   {link.name}

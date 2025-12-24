@@ -48,7 +48,7 @@ export default function Work() {
         <SectionHeader
           label="PROJECTS"
           title="Examples of how we combine services"
-          description="These are sample ways we mix construction, events, digital services and F&B together. Your plan can be similar or fully different — we listen first and then suggest."
+          description="These are sample ways we collaborate with construction, events, digital services and F&B together. Your plan can be similar or fully different — we listen first and then suggest."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
