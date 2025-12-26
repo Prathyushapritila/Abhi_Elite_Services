@@ -56,12 +56,12 @@ export default function Navbar() {
       <div className="absolute inset-0 bg-black/20"></div>
       <nav className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         <div className="min-h-[96px] md:min-h-[120px] flex items-center justify-between">
-          {/* Logo Block */}
+          {/* Logo Block - Accessible touch target */}
           <Link 
             href="#home" 
-            className="flex items-center pr-8 md:pr-12"
+            className="flex items-center pr-8 md:pr-12 min-h-[44px] min-w-[44px] py-2 -my-2"
             onClick={() => handleNavClick('home')}
-            aria-label="Abhi Synergies Home"
+            aria-label="Abhi Synergies Home - Navigate to top of page"
           >
             <Logo variant="header" />
           </Link>
