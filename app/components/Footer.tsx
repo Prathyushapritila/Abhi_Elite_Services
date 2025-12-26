@@ -28,7 +28,7 @@ export default function Footer() {
 
           {/* Middle: Address */}
           <div className="flex flex-col">
-            <p className="font-bold mb-3 text-sm text-white underline">Address:</p>
+            <p className="font-bold mb-3 text-sm text-[#EA6A1F] underline">Address:</p>
             <div className="text-sm text-slate-300 leading-relaxed space-y-1">
               <p>Matrusree Apartments</p>
               <p>Opposite: Zudio Showroom</p>
@@ -39,7 +39,7 @@ export default function Footer() {
 
           {/* Right: Social Icons */}
           <div className="flex flex-col">
-            <p className="font-semibold mb-3 text-sm text-white">Connect with us</p>
+            <p className="font-semibold mb-3 text-sm text-[#EA6A1F]">Connect with us</p>
             <div className="flex gap-4">
               {/* Facebook - Blue Icon */}
               <a

@@ -150,7 +150,7 @@ export default function PrivacyPage() {
                 If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
               </p>
               <div className="mt-4 p-6 bg-[#FFF8F0] rounded-lg border border-slate-200">
-                <p className="font-semibold text-ink mb-2">Abhi Synergies</p>
+                <p className="font-semibold text-[#EA6A1F] mb-2">Abhi Synergies</p>
                 <p className="text-muted">Matrusree Apartments</p>
                 <p className="text-muted">Opposite: Zudio Showroom</p>
                 <p className="text-muted">Hyderguda, Basheerbagh</p>

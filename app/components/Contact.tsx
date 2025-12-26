@@ -150,7 +150,7 @@ export default function Contact() {
               <Logo variant="contact" />
               <div className="flex items-start gap-4 mt-4">
                 <div className="flex-1">
-          <div className="text-[10px] uppercase tracking-wide text-ink mb-1 underline decoration-2 font-semibold">Founder</div>
+          <div className="text-[10px] uppercase tracking-wide text-[#EA6A1F] mb-1 underline decoration-2 font-semibold">Founder</div>
           <h3 className="brand-font text-2xl md:text-3xl text-blue-900 mb-2">SRIKANTH PRITILA</h3>
           <div className="text-sm text-muted space-y-1">
             <a 
