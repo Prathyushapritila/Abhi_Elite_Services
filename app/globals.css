@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --brand-gold: #FACC15; /* Gold color from header logo - matches "Rise Together" in MainLogo_NewGold.png */
+    --brand-gold: #D4AF37; /* Gold color matching logo - slightly darker/muted to match actual logo appearance */
   }
   
   html {
