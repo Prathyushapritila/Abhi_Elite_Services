@@ -109,13 +109,13 @@ export default function Footer() {
           </p>
           <div className="flex gap-6">
             <Link
-              href="#"
+              href="/privacy"
               className="text-slate-300 hover:text-[#EA6A1F] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#EA6A1F] focus:ring-offset-2 focus:ring-offset-slate-900 rounded px-2 py-1"
             >
               Privacy
             </Link>
             <Link
-              href="#"
+              href="/terms"
               className="text-slate-300 hover:text-[#EA6A1F] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#EA6A1F] focus:ring-offset-2 focus:ring-offset-slate-900 rounded px-2 py-1"
             >
               Terms
