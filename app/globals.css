@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --brand-gold: #FACC15; /* Gold color from header logo - matches "Rise Together" in MainLogo_NewGold.png */
+  }
+  
   html {
     scroll-behavior: smooth;
   }
