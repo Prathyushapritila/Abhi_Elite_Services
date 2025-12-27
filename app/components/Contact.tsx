@@ -73,12 +73,21 @@ export default function Contact() {
       setIsSubmitting(true)
       
       try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch('https://formsubmit.co/ajax/abhisynergies@gmail.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'Accept': 'application/json'
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            services: formData.services.join(', '),
+            message: formData.message,
+            _subject: `New Contact Form Submission from ${formData.name}`,
+            _captcha: false
+          }),
         })
 
         const data = await response.json()
@@ -97,7 +106,7 @@ export default function Contact() {
             setIsSubmitted(false)
           }, 5000)
         } else {
-          alert(data.error || 'Failed to send message. Please try again.')
+          alert('Failed to send message. Please try again.')
         }
       } catch (error) {
         console.error('Error submitting form:', error)
