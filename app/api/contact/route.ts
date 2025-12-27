@@ -51,40 +51,36 @@ ${message}
 This email was sent from the contact form on abhi-synergies.vercel.app
     `.trim()
 
-    // Email sending functionality
-    // To enable email sending, install Resend: npm install resend
-    // Then add RESEND_API_KEY and RESEND_FROM_EMAIL to your environment variables
-    // 
-    // Example Resend integration (uncomment when Resend is installed):
-    // if (process.env.RESEND_API_KEY) {
-    //   const { Resend } = await import('resend')
-    //   const resend = new Resend(process.env.RESEND_API_KEY)
-    //   await resend.emails.send({
-    //     from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
-    //     to: recipientEmail,
-    //     replyTo: email,
-    //     subject: subject,
-    //     html: emailBodyHtml,
-    //     text: emailBodyText,
-    //   })
-    // }
-
-    // Fallback: Use mailto link (requires user's email client)
-    // This is a temporary solution until Resend is configured
-    // To configure Resend:
-    // 1. Install: npm install resend
-    // 2. Get API key from https://resend.com
-    // 3. Add RESEND_API_KEY to your .env.local file
-    // 4. Add RESEND_FROM_EMAIL to your .env.local (e.g., 'contact@yourdomain.com')
-    
-    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBodyText)}`
-    
-    // Log for debugging
-    console.log('Contact form submission (mailto fallback):', {
-      to: recipientEmail,
-      subject,
-      mailtoLink,
-    })
+    // Email sending using Resend
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const { Resend } = await import('resend')
+        const resend = new Resend(process.env.RESEND_API_KEY)
+        
+        await resend.emails.send({
+          from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
+          to: recipientEmail,
+          replyTo: email,
+          subject: subject,
+          html: emailBodyHtml,
+          text: emailBodyText,
+        })
+        
+        console.log('Email sent successfully to:', recipientEmail)
+      } catch (emailError) {
+        console.error('Error sending email:', emailError)
+        // Continue execution - don't fail the request if email fails
+      }
+    } else {
+      // Log for debugging when Resend is not configured
+      console.log('Resend API key not found. Email not sent. Form submission logged:', {
+        to: recipientEmail,
+        subject,
+        name,
+        email,
+        phone,
+      })
+    }
 
     // Return success response
     return NextResponse.json(
